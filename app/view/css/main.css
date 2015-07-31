@@ -1,0 +1,73 @@
+*{
+    font-size: 16px;
+    padding: 0;margin: 0;
+}
+
+*:active, *:focus, *:hover{outline:none;} 
+
+*::-moz-focus-inner{border:none;}
+
+#subbody{
+    position: fixed;
+    top:0;left: 0;
+    width: 100%; height: 100%;
+}
+
+#subbody header{
+    position: absolute;
+    top:0;left:0;
+    width: 100%; height: 80px;
+    background-color: #3F51B5;
+    z-index: 1;
+}
+
+#subbody #contenedor{
+    position: absolute; display: flex;
+    top:80px;left:0;bottom:30px; 
+    width: 100%;
+    color: aliceblue;
+    background: #673AB7;
+}
+
+#subbody #contenedor .subcontenedor{
+    position: relative; 
+    margin: auto;
+    width: 1024px;
+    background-color: #2196F3;
+    overflow: auto;
+}
+
+#subbody #contenedor .cont_menu{
+    position: absolute; display: flex;
+    top:0;right:-99%;bottom:0; 
+    width: 100%;
+    background-color: #607D8B;
+    -webkit-transition:all 1s;
+    transition:all 1s;
+    overflow-y: auto;
+    overflow-none: none;
+}
+
+#subbody #contenedor .cont_menu:hover{
+    right:0;
+}
+
+#subbody footer{
+    position: absolute;
+    left:0;bottom:-70px; 
+    width: 100%;height:100px;
+    background-color: #009688;
+    -webkit-transition:all 0.5s;
+    transition:all 0.5s;
+}
+
+#subbody footer:hover{
+    position: absolute;
+    left:0;bottom:0; 
+}
+
+
+#texto1{font-family: Aldo-SemiBold;}
+
+#texto2{font-family: 'gothic' !important;
+        font-size: 2em;}

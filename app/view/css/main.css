@@ -7,10 +7,13 @@
 
 *::-moz-focus-inner{border:none;}
 
+
 #subbody{
+    background: none;
     position: fixed;
     top:0;left: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 #subbody header{
@@ -21,12 +24,36 @@
     z-index: 1;
 }
 
+#subbody header .one{
+    height: 80px;
+    width: 50%;
+    float: left;
+}
+
+#subbody header .one .logo{
+    width: 100px;    height: 100px;
+    position: absolute;
+    top:30px;
+    left:2%;
+}
+
+#subbody header .one .espacio{
+    height: 80px;
+    width: 250px;left: 10%;
+    position: absolute;   
+}
+
+#subbody header .two{
+    height: 80px;
+    width: 50%;
+    float: left;
+}
+
 #subbody #contenedor{
+    background-color: transparent;
     position: absolute; display: flex;
     top:80px;left:0;bottom:30px; 
     width: 100%;
-    color: aliceblue;
-    background: #673AB7;
 }
 
 #subbody #contenedor .subcontenedor{
@@ -52,22 +79,194 @@
     right:0;
 }
 
-#subbody footer{
+    #subbody footer{
     position: absolute;
     left:0;bottom:-70px; 
     width: 100%;height:100px;
-    background-color: #009688;
+    background-color: #00b0d9;
     -webkit-transition:all 0.5s;
     transition:all 0.5s;
 }
 
-#subbody footer:hover{
+    #subbody footer:hover{
     position: absolute;
     left:0;bottom:0; 
 }
+    #subbody footer:hover span{display: none;}
+    #subbody footer span{
+    text-align: center;
+    width: 100%;
+    top: 2.5px;
+}
 
+
+
+
+
+#subbody footer .icon-ctrl{
+    position: absolute;    
+    font-size: 3em;
+    color: #fff;
+}
+
+
+#subbody footer .contenedorf{
+    width: 1024px;
+    margin: auto;
+    height: 100%;
+}
+
+
+
+#subbody footer .contenedorf .item{
+    margin-top: 30px;
+}
+
+#subbody footer .contenedorf .item ul{
+    height: 80px;
+    float: left;
+    list-style: none;
+    margin-right: 10px;
+    border-right: #0195af solid 1px;
+    width: 33%;
+    padding: 0px 15px;
+}
+
+#subbody footer .contenedorf .item ul a {
+    text-decoration: none;
+    font-family: gothic;
+}
+
+#subbody footer .contenedorf .item ul a li{
+    font-size:0.9em;
+    text-align: left;
+    color: white;
+}
+
+#subbody footer .contenedorf .item img{
+    float: right;
+    margin-top: -0px;
+    width: 140px;    
+}
 
 #texto1{font-family: Aldo-SemiBold;}
 
 #texto2{font-family: 'gothic' !important;
         font-size: 2em;}
+
+
+
+/*Movil*/
+
+@media screen and (min-width: 320px){
+    #subbody{
+    background: none;
+    position: fixed;
+    top:0;left: 0;
+    width: 100%;
+    height: 100%;
+}   
+    
+    #subbody header{
+    width: 100%; height: 100px;
+    background-color: #3F51B5;
+    z-index: 1;
+}
+    #subbody #contenedor{
+        
+        display: block;
+        top:100px;
+        overflow: none;
+        width: 100%;
+    }
+    
+    #subbody #contenedor .subcontenedor{
+    position: relative; 
+    margin: auto;
+    width: 100%;
+    padding: 5px;
+    
+}
+
+   
+    
+    #subbody footer .contenedorf .item{
+        display: none;
+    }
+    
+   #subbody footer .contenedorf .itemdos{
+    width: 90%;
+    padding: 10px;
+    margin-top: 18px;
+/*    background: #a31717;*/
+    
+}
+
+
+#subbody footer .contenedorf .itemdos a{
+    text-decoration: none;
+}
+
+#subbody footer .contenedorf .itemdos a li{
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-family: gothic;
+}
+
+    
+}
+
+
+
+/*escritorio*/
+
+
+@media only screen and (min-width:1024px) {
+ 
+    #subbody{
+        background-image: url(../imgs/fondo2.png);
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+    
+    #subbody #contenedor{
+    background-color: transparent;
+    position: absolute; display: flex;
+    top:80px;left:0;bottom:30px; 
+    width: 100%;
+}
+    
+     #subbody #contenedor .subcontenedor{
+    position: relative; 
+    margin: auto;
+    width: 1024px;
+    background-color: #2196F3;
+    overflow: auto;
+     }
+    
+    #subbody footer .contenedorf .itemdos{
+        display: none;
+    }
+
+	#subbody footer .contenedorf .item {
+        display: block;
+		padding: -2px;
+	}
+
+	#subbody footer .contenedorf {
+		width: 900px;
+	}
+    
+    
+
+    
+   
+    
+
+}
+    
+
+
+
+

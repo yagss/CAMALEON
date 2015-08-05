@@ -79,7 +79,7 @@
     right:0;
 }
 
-    #subbody footer{
+#subbody footer{
     position: absolute;
     left:0;bottom:-70px; 
     width: 100%;height:100px;
@@ -88,62 +88,58 @@
     transition:all 0.5s;
 }
 
-    #subbody footer:hover{
+#subbody footer:hover{
     position: absolute;
     left:0;bottom:0; 
 }
-    #subbody footer:hover span{display: none;}
-    #subbody footer span{
+
+#subbody footer:hover span{color: #00b0d9;}
+
+#subbody footer span{
     text-align: center;
     width: 100%;
     top: 2.5px;
 }
 
-
-
-
-
 #subbody footer .icon-ctrl{
-    position: absolute;    
+    display: block;
+    margin: auto;
+    height: 30px;
     font-size: 3em;
     color: #fff;
 }
 
-
-#subbody footer .contenedorf{
-    width: 1024px;
-    margin: auto;
-    height: 100%;
+#subbody footer .contenedor{
+    display: block;
+    width: 80%; height: 80px;
+    margin-left: auto;margin-right: auto;
 }
 
-
-
-#subbody footer .contenedorf .item{
-    margin-top: 30px;
-}
-
-#subbody footer .contenedorf .item ul{
-    height: 80px;
+#subbody footer .contenedor .item{
+    display: inline-block;
+    width: 33%;
     float: left;
+}
+
+#subbody footer .contenedor .item ul{
     list-style: none;
     margin-right: 10px;
     border-right: #0195af solid 1px;
-    width: 33%;
     padding: 0px 15px;
 }
 
-#subbody footer .contenedorf .item ul a {
+#subbody footer .contenedor .item ul a {
     text-decoration: none;
     font-family: gothic;
 }
 
-#subbody footer .contenedorf .item ul a li{
+#subbody footer .contenedor .item ul a li{
     font-size:0.9em;
     text-align: left;
     color: white;
 }
 
-#subbody footer .contenedorf .item img{
+#subbody footer .contenedor .item img{
     float: right;
     margin-top: -0px;
     width: 140px;    
@@ -154,119 +150,60 @@
 #texto2{font-family: 'gothic' !important;
         font-size: 2em;}
 
+/* Escritorio */
 
-
-/*Movil*/
-
-@media screen and (min-width: 320px){
-    #subbody{
-    background: none;
-    position: fixed;
-    top:0;left: 0;
-    width: 100%;
-    height: 100%;
-}   
-    
-    #subbody header{
-    width: 100%; height: 100px;
-    background-color: #3F51B5;
-    z-index: 1;
-}
-    #subbody #contenedor{
-        
-        display: block;
-        top:100px;
-        overflow: none;
-        width: 100%;
-    }
-    
-    #subbody #contenedor .subcontenedor{
-    position: relative; 
-    margin: auto;
-    width: 100%;
-    padding: 5px;
-    
-}
-
-   
-    
-    #subbody footer .contenedorf .item{
-        display: none;
-    }
-    
-   #subbody footer .contenedorf .itemdos{
-    width: 90%;
-    padding: 10px;
-    margin-top: 18px;
-/*    background: #a31717;*/
-    
-}
-
-
-#subbody footer .contenedorf .itemdos a{
-    text-decoration: none;
-}
-
-#subbody footer .contenedorf .itemdos a li{
-    color: #fff;
-    font-size: 0.9em;
-    margin-top: 5px;
-    font-family: gothic;
-}
-
-    
-}
-
-
-
-/*escritorio*/
-
-
-@media only screen and (min-width:1024px) {
+@media screen and (min-width:1024px) {
  
     #subbody{
-        background-image: url(../imgs/fondo2.png);
+        background-image: url(../imgs/fondo_invertido.png);
         background-position: right;
         background-repeat: no-repeat;
     }
     
-    #subbody #contenedor{
-    background-color: transparent;
-    position: absolute; display: flex;
-    top:80px;left:0;bottom:30px; 
-    width: 100%;
+    #subbody footer .contenedor {
+		width: 80%;
+	}
+
 }
+
+@media screen and (min-width: 768px){ 
+
+    #subbody footer .contenedor .item {
+        display: block;
+	}
     
-     #subbody #contenedor .subcontenedor{
-    position: relative; 
-    margin: auto;
-    width: 1024px;
-    background-color: #2196F3;
-    overflow: auto;
-     }
-    
-    #subbody footer .contenedorf .itemdos{
+    #subbody footer .contenedor .item.responsive{
         display: none;
     }
-
-	#subbody footer .contenedorf .item {
-        display: block;
-		padding: -2px;
-	}
-
-	#subbody footer .contenedorf {
-		width: 900px;
-	}
     
-    
-
-    
-   
-    
-
 }
+
+@media screen and (max-width: 768px){ 
+
+
+    #subbody footer .contenedor .item{
+        display: none;
+    }
     
+    #subbody footer .contenedor .item.responsive{
+        display: block;
+        width: 100%;
+    }
+    
+}
 
+/* Movil */
 
+@media screen and (max-width: 320px){ 
 
+    #subbody #contenedor .subcontenedor{
+        width: 100%;
+        padding: 5px;
+    }
+    
+    #subbody #contenedor{
+        display: block;
+    }
+    
+}
 

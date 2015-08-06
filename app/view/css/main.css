@@ -38,6 +38,7 @@
 }
 
 #subbody header .one .espacio{
+    padding-top:15px; 
     height: 80px;
     width: 250px;left: 10%;
     position: absolute;   
@@ -60,7 +61,6 @@
     position: relative; 
     margin: auto;
     width: 1024px;
-    background-color: #2196F3;
     overflow: auto;
 }
 
@@ -68,7 +68,7 @@
     position: absolute; display: flex;
     top:0;right:-99%;bottom:0; 
     width: 100%;
-    background-color: #607D8B;
+    background-color: rgba(38, 50, 56, 0.9);
     -webkit-transition:all 1s;
     transition:all 1s;
     overflow-y: auto;
@@ -181,6 +181,7 @@
 @media screen and (max-width: 768px){ 
 
 
+
     #subbody footer .contenedor .item{
         display: none;
     }
@@ -195,6 +196,8 @@
 /* Movil */
 
 @media screen and (max-width: 320px){ 
+    
+    *{font-size: 11px;}
 
     #subbody #contenedor .subcontenedor{
         width: 100%;

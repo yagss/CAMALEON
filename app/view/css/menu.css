@@ -1,5 +1,30 @@
 #subbody #contenedor .cont_menu .menu{
     margin: auto;
-    height: 50%;width: 50%;
-    background-color: #FF5722;
+    height: 50%;
+
+}
+
+#subbody #contenedor .cont_menu .menu nav a {
+    text-decoration: none;
+    font-family: gothic;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    
+}
+
+#subbody #contenedor .cont_menu .menu nav a:hover {
+    color: cadetblue;
+}
+
+#subbody #contenedor .cont_menu .menu h1{
+    text-decoration: none;
+    font-family: gothic;
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin: 8px;
+    
 }

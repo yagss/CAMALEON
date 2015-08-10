@@ -24,30 +24,38 @@
     z-index: 1;
 }
 
-#subbody header .one{
-    height: 80px;
-    width: 50%;
-    float: left;
-}
-
-#subbody header .one .logo{
-    width: 100px;    height: 100px;
+#subbody header .subheader{
+    height: 100%;
     position: absolute;
-    top:30px;
-    left:2%;
 }
 
-#subbody header .one .espacio{
-    padding-top:15px; 
-    height: 80px;
-    width: 250px;left: 10%;
-    position: absolute;   
+#subbody header .subheader.logo{
+    top:30px; left:20px;
 }
 
-#subbody header .two{
-    height: 80px;
-    width: 50%;
-    float: left;
+#subbody header .subheader.logo img{
+    width: 100px;
+}
+
+#subbody header .subheader.espacio{
+    top:0px;left:120px;
+}
+
+#subbody header .subheader.btnmenu{
+    top:0px;right:0px;
+    height: 100%;
+    display: flex;
+}
+
+#subbody header .subheader.btnmenu .icon-menu{
+    margin-top: auto; margin-bottom:auto;
+    margin-left: 20px;margin-right: 20px;
+    font-size: 2em; color: #fff;
+}
+
+
+#subbody header .subheader.logo .contenedor img{
+    width: 100px;
 }
 
 #subbody #contenedor{
@@ -72,7 +80,6 @@
     -webkit-transition:all 1s;
     transition:all 1s;
     overflow-y: auto;
-    overflow-none: none;
 }
 
 #subbody #contenedor .cont_menu:hover{
@@ -145,14 +152,18 @@
     width: 140px;    
 }
 
-#texto1{font-family: Aldo-SemiBold;}
+#texto1{
+    font-family: Aldo-SemiBold;
+}
 
-#texto2{font-family: 'gothic' !important;
-        font-size: 2em;}
+#texto2{
+    font-family: 'gothic' !important;
+    font-size: 2em;
+}
 
 /* Escritorio */
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1120px) {
  
     #subbody{
         background-image: url(../imgs/fondo_invertido.png);
@@ -161,16 +172,20 @@
     }
     
     #subbody footer .contenedor {
-		width: 80%;
-	}
+        width: 80%;
+    }
 
 }
 
-@media screen and (min-width: 768px){ 
+@media screen and (max-width: 960px){ 
+    
+}
+
+@media screen and (min-width: 800px){ 
 
     #subbody footer .contenedor .item {
         display: block;
-	}
+    }
     
     #subbody footer .contenedor .item.responsive{
         display: none;
@@ -178,9 +193,7 @@
     
 }
 
-@media screen and (max-width: 768px){ 
-
-
+@media screen and (max-width: 800px){ 
 
     #subbody footer .contenedor .item{
         display: none;
@@ -195,10 +208,36 @@
 
 /* Movil */
 
-@media screen and (max-width: 320px){ 
+@media screen and (max-width: 640px){
     
-    *{font-size: 11px;}
+    #subbody header{
+        height: 60px;
+    }
+    
+    #subbody header .subheader.logo{
+        top:20px; left:10px;
+    }
+    
+    #subbody header .subheader.logo img{
+        width: 80px;
+    }
+    
+    #subbody header .subheader.espacio{
+        display: none;
+    }
+    
+    #subbody #contenedor{
+        top:60px;
+    }
+    
+    #subbody header .subheader.btnmenu .icon-menu{
+        margin-left: 10px;margin-right: 10px;
+    }
+    
+}
 
+@media screen and (max-width: 480px){ 
+    
     #subbody #contenedor .subcontenedor{
         width: 100%;
         padding: 5px;
@@ -210,3 +249,10 @@
     
 }
 
+@media screen and (max-width: 319px){ 
+    
+    #subbody {
+        display: none;
+    }
+    
+}

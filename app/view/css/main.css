@@ -38,16 +38,20 @@
 }
 
 #subbody header .subheader.espacio{
-    top:0px;left:120px;
+    left:140px;top:10px;
 }
 
-#subbody header .subheader.btnmenu{
+#subbody header .subheader.espacio img{
+    width: 130px;
+}
+
+#subbody header .subheader.btn{
     top:0px;right:0px;
     height: 100%;
     display: flex;
 }
 
-#subbody header .subheader.btnmenu .icon-menu{
+#subbody header .subheader.btn span{
     margin-top: auto; margin-bottom:auto;
     margin-left: 20px;margin-right: 20px;
     font-size: 2em; color: #fff;
@@ -60,30 +64,32 @@
 
 #subbody #contenedor{
     background-color: transparent;
-    position: absolute; display: flex;
+    position: absolute;
     top:80px;left:0;bottom:30px; 
     width: 100%;
 }
 
-#subbody #contenedor .subcontenedor{
-    position: relative; 
-    margin: auto;
-    width: 1024px;
-    overflow: auto;
-}
-
-#subbody #contenedor .cont_menu{
+#subbody #contenedor .box{
     position: absolute; display: flex;
-    top:0;right:-99%;bottom:0; 
+    top:0;bottom:0;
     width: 100%;
-    background-color: rgba(38, 50, 56, 0.9);
     -webkit-transition:all 1s;
     transition:all 1s;
     overflow-y: auto;
 }
 
-#subbody #contenedor .cont_menu:hover{
+#subbody #contenedor .box.menu{
+    right:-99%; 
+    background-color: rgba(38, 50, 56, 0.9);
+}
+
+#subbody #contenedor .box.menu:hover{
     right:0;
+}
+
+#subbody #contenedor .box .contenido{
+    position: relative; 
+    margin: auto;
 }
 
 #subbody footer{
@@ -163,7 +169,7 @@
 
 /* Escritorio */
 
-@media screen and (min-width:1120px) {
+@media screen and (min-width:1280px) {
  
     #subbody{
         background-image: url(../imgs/fondo_invertido.png);
@@ -171,17 +177,45 @@
         background-repeat: no-repeat;
     }
     
-    #subbody footer .contenedor {
+    #subbody #contenedor .box .contenido{
+        width: 1024px;
+    }
+
+}
+
+@media screen and (max-width:1280px) {
+    
+    #subbody #contenedor .box .contenido{
         width: 80%;
     }
 
 }
 
-@media screen and (max-width: 960px){ 
+@media screen and (min-width:1120px) {
     
 }
 
-@media screen and (min-width: 800px){ 
+@media screen and (max-width:1120px) {
+    
+    #subbody #contenedor .box .contenido{
+        width: 84%;
+    }
+
+}
+
+@media screen and (min-width: 960px){
+    
+}
+
+@media screen and (max-width: 960px){
+    
+    #subbody #contenedor .box .contenido{
+        width: 88%;
+    }
+    
+}
+
+@media screen and (min-width: 800px){
 
     #subbody footer .contenedor .item {
         display: block;
@@ -193,7 +227,11 @@
     
 }
 
-@media screen and (max-width: 800px){ 
+@media screen and (max-width: 800px){
+    
+    #subbody #contenedor .box .contenido{
+        width: 92%;
+    }
 
     #subbody footer .contenedor .item{
         display: none;
@@ -226,6 +264,10 @@
         display: none;
     }
     
+    #subbody #contenedor .box .contenido{
+        width: 96%;
+    }
+    
     #subbody #contenedor{
         top:60px;
     }
@@ -238,9 +280,8 @@
 
 @media screen and (max-width: 480px){ 
     
-    #subbody #contenedor .subcontenedor{
+    #subbody #contenedor .box .contenido{
         width: 100%;
-        padding: 5px;
     }
     
     #subbody #contenedor{

@@ -1,0 +1,49 @@
+
+.login{
+    height: 100px;
+    
+    width: 100%;
+    display: none;
+    
+    
+}
+
+
+#contenedor .subcontenedor .login .campos{
+    position: absolute;
+    margin: 30px 150px;
+}
+
+.usuario{
+    font-family: gothic;
+    color:#5df4f4 ;
+}
+
+.field {
+    color: white;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    margin: 3px 10px;
+    background-color: #adffff;
+}
+
+input[type=submit]{
+    font-family: gothic;
+    padding: 5px;
+    margin: auto 20px;
+    background-color: #00eaea;
+    color: white;
+    border: none;
+}
+
+.video{
+    margin-top: 10px;
+     width: 100%; 
+    
+}
+.video iframe{
+   width: 100%; 
+    
+    
+}

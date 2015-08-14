@@ -1,17 +1,15 @@
-
+#subbody #contenedor .box .contenido .inicio{
+  width: 100%;
+}
 .login{
-    height: 100px;
-    
-    width: 100%;
     display: none;
+    width: 60%;
     
     
 }
-
-
-#contenedor .subcontenedor .login .campos{
-    position: absolute;
-    margin: 30px 150px;
+.campos{
+    float: left;
+    margin-right: 20px;
 }
 
 .usuario{
@@ -19,7 +17,7 @@
     color:#5df4f4 ;
 }
 
-.field {
+/*.field {
     color: white;
     padding: 5px;
     background-color: transparent;
@@ -36,14 +34,90 @@ input[type=submit]{
     color: white;
     border: none;
 }
-
+*/
 .video{
     margin-top: 10px;
      width: 100%; 
+   
+        
     
 }
 .video iframe{
    width: 100%; 
+   
+}
+/*Escritorio*/
+/*@media screen and (min-width:1280px){
+    .login{
+            
+        
+    }
+}
+@media screen and (max-width:1280px){
+    .login{
+       
+
+    }
+}
+
+@media screen and (min-width:1120px){
+    .login{padding: 10px 11px;
+    }
+}
+
+@media screen and (max-width:1120px){
+    .login{padding: 10px 11px;
+    }
+}
+@media screen and (min-width:960px){
+    .login{
+        padding:0px;
+    }
+}
+@media screen and (max-width:960px){
+    .login{
+        padding: 10px 95px;
+    }
+}
+@media screen and (min-width:800px){
+    .login{
+        
+    }
+}
+@media screen and (max-width:800px){
+    .login{
+        
+    }
+}
+
+
+@media screen and (max-width:640px){
+    .login{
+       
+        
+       
+    }
+    .campos{
+        
+    }
+    
+    .usuario{
+        
+    }
+    input[type=submit]{
     
     
 }
+}
+@media screen and (max-width:480px){
+    .
+    
+}
+    
+}
+@media screen and (max-width:319px){
+    .login{
+        
+    }
+}
+*/

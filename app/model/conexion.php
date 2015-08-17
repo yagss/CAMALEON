@@ -55,7 +55,11 @@
 					$sentencia->execute();
 				}
 				$this->commit();
-				$operation['result'] = $sentencia->rowCount();
+				if($sentencia->rowCount()>0){
+					$operation['result'] = $sentencia->fetch();
+				}else{
+					$operation['result'] = $sentencia->rowCount();
+				}
 				$operation['ejecution'] = true;			
 			}catch(PDOException $e){
 				$this->rollBack();

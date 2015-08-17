@@ -10,11 +10,12 @@
 
 
 #subbody{
-    background: none;
+    background-image: url(../imgs/fondo_invertido.png);
+    background-repeat: no-repeat;
+    background-position: right;
     position: fixed;
     top:0;left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%;height: 100%;
 }
 
 #subbody header{
@@ -89,6 +90,7 @@
 #subbody #contenedor .box .contenido{
     position: relative; 
     margin: auto;
+    width: 1024px;
 }
 
 #subbody footer{
@@ -125,6 +127,10 @@
     display: block;
     width: 80%; height: 80px;
     margin-left: auto;margin-right: auto;
+}
+
+#subbody footer .contenedor .item.view_movil{
+    display: none;
 }
 
 #subbody footer .contenedor .item{
@@ -168,30 +174,16 @@
 
 /* Escritorio */
 
-@media screen and (min-width:1280px) {
+@media screen and (max-width:1280px) {
  
     #subbody{
-        background-image: url(../imgs/fondo_invertido.png);
-        background-position: right;
-        background-repeat: no-repeat;
+        background:none;
     }
-    
-    #subbody #contenedor .box .contenido{
-        width: 1024px;
-    }
-
-}
-
-@media screen and (max-width:1280px) {
     
     #subbody #contenedor .box .contenido{
         width: 80%;
     }
 
-}
-
-@media screen and (min-width:1120px) {
-    
 }
 
 @media screen and (max-width:1120px) {
@@ -202,26 +194,10 @@
 
 }
 
-@media screen and (min-width: 960px){
-    
-}
-
 @media screen and (max-width: 960px){
     
     #subbody #contenedor .box .contenido{
         width: 88%;
-    }
-    
-}
-
-@media screen and (min-width: 800px){
-
-    #subbody footer .contenedor .item {
-        display: block;
-    }
-    
-    #subbody footer .contenedor .item.responsive{
-        display: none;
     }
     
 }
@@ -236,7 +212,7 @@
         display: none;
     }
     
-    #subbody footer .contenedor .item.responsive{
+    #subbody footer .contenedor .item.view_movil{
         display: block;
         width: 100%;
     }

@@ -1,0 +1,58 @@
+#subbody #contenedor .box .menu{
+    margin: auto;
+    height: 50%;
+
+}
+
+#subbody #contenedor .box .menu nav a {
+    text-decoration: none;
+    font-family: gothic;
+    font-size: 1em;
+    color: #fff;
+    text-align: left;
+    display: block;
+    margin-top: 10px;
+    
+}
+
+#subbody #contenedor .box .menu nav a:hover {
+    color: cadetblue;
+}
+
+#subbody #contenedor .box .menu h1 .icon-home2{
+    font-size: 1em;
+}
+
+#subbody #contenedor .box .menu a .icon-earth{
+    font-size: 1.1em;
+}
+
+#subbody #contenedor .box .menu h1{
+    font-family: gothic;
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    margin: 8px;
+    padding: 11px;
+    
+}
+
+#subbody #contenedor .box .menu ul{
+    list-style: none;   
+    margin-left: 5%;
+}
+
+
+
+#subbody #contenedor .box .menu .icon-play3{
+    font-size: 0.7em; 
+}
+
+
+#subbody #contenedor .box .menu .submenu .children{
+    display: none;
+    
+}
+
+
+

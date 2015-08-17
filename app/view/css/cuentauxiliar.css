@@ -1,0 +1,82 @@
+#subbody #contenedor .box .contenido .cuentaauxiliar{
+  width: 100%;
+    
+}
+#subbody #contenedor .box .contenido .cuentaauxiliar h1{
+    text-align: left;
+    position: absolute;
+    font-family: gothic;
+    font-size: 1.3em;
+    top: 10px;
+ 
+    
+}
+
+
+.form .fieldbox{
+    position: relative;
+    display: inline-block;   
+    margin: 3.6% 2%;
+    text-align:left;
+    vertical-align:middle;
+    border-bottom: 1px solid #bdbdbd;
+    top: 20px;
+}
+
+.cuentaauxiliar div:nth-child(2) {
+    
+    float: left;
+    
+}
+.cuentaauxiliar div:nth-child(3) {
+    
+    float:left;
+}
+
+.cuentaauxiliar div:nth-child(4) {
+    
+    float: left;
+}
+
+.cuentaauxiliar div:nth-child(5) {
+    
+    float: left;
+    
+}
+
+.cuentaauxiliar div:nth-child(6) {
+    
+    float: left;
+}
+
+.cuentaauxiliar div:nth-child(7) {
+    
+    float: left;
+    
+}
+.cuentaauxiliar div:nth-child(8) {
+    
+    float: left;
+    
+}
+
+.cuentaauxiliar div:nth-child(9) {
+    
+    float: left;
+    
+}
+
+@media screen and (max-width:480px;){
+    .form .fieldbox{display:block;}
+    
+    .cuentaauxiliar div:nth-child(2){width: 100%}
+    .cuentaauxiliar div:nth-child(3){width: 100%}
+    .cuentaauxiliar div:nth-child(4){width: 100%}
+    .cuentaauxiliar div:nth-child(5){width: 100%}
+    .cuentaauxiliar div:nth-child(6){width: 100%}
+    .cuentaauxiliar div:nth-child(7){width: 100%}
+    .cuentaauxiliar div:nth-child(8){width: 100%}
+    .cuentaauxiliar div:nth-child(9){width: 100%}
+}
+
+ 

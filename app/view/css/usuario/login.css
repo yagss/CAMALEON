@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.form #login{
+.form#login{
     display: none;
     width: 60%;    
 }

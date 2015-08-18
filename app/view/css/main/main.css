@@ -11,7 +11,7 @@
 
 
 #subbody{
-    background-image: url(../imgs/fondo_invertido.png);
+    background-image: url(/app/view/imgs/fondo_invertido.png);
     background-repeat: no-repeat;
     background-position: right;
     position: fixed;

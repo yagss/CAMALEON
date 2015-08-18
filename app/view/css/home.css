@@ -1,33 +1,28 @@
-#subbody #contenedor .box .contenido .bienvennida{
+.contenido .home{
     margin-top: 20px;text-align: center;
-    
 }
 
-#subbody #contenedor .box .contenido .bienvennida h1{
+.contenido .home h1{
     font-family: gothic;
     font-size: 1.3em;
     color: #000; 
     margin-bottom: 10px;
-    
-    
 }
 
-
-#subbody #contenedor .box .contenido .bienvennida a{
+.contenido .home a{
     display: inline-block;
-     text-decoration: none;
-    
+    text-decoration: none;
 }
 
-#subbody #contenedor .box .contenido .bienvennida a span{
+.contenido .home a span{
     background: #c50038;
     border-radius: 50%;
     margin:10px;   
 }
 
-#subbody #contenedor .box .contenido .bienvennida a .icon-circle-up { 
-        font-size: 5em;
-        color: #fff;
+.contenido .home a .icon-circle-up { 
+    font-size: 5em;
+    color: #fff;
 }
 
 

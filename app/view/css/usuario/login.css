@@ -1,0 +1,18 @@
+.contenido .login{
+  width: 100%;
+}
+
+.form #login{
+    display: none;
+    width: 60%;    
+}
+
+
+.contenido .video{
+    margin-top: 10px;
+    width: 100%; 
+}
+
+ .contenido .video iframe{
+   width: 100%;   
+}

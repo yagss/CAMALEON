@@ -14,23 +14,20 @@
             
             var btnMenuShow = function(){
                 
-                parameter.btn_menu.show();
-                parameter.btn_menu.append('<i class="fa fa-ellipsis-v"></i>');
+                parameter.btn_menu.addClass('icon-menu');
                 
             };
             
             var btnMenuHide = function(){
                 
-                parameter.btn_menu.hide();
-                parameter.btn_menu.find(".fa-ellipsis-v").remove();
+                parameter.btn_menu.removeClass('icon-menu');
                 
             };
             
             var open_close = function(){
                 
-                if(!(parameter.object.hasClass("open_menu"))){
-                    parameter.object.addClass("open_menu");
-                    parameter.btn_menu.addClass("active");
+                if(!(parameter.object.parent().hasClass("open"))){
+                    parameter.object.parent().addClass("open");
                 }else{
                     close();
                 }
@@ -39,9 +36,8 @@
             
             var close = function (){
                 
-                if(parameter.object.hasClass("open_menu")){
-                    parameter.object.removeClass("open_menu");
-                    parameter.btn_menu.removeClass("active");
+                if(parameter.object.parent().hasClass("open")){
+                    parameter.object.parent().removeClass("open");
                 }
                 
             };
@@ -70,7 +66,7 @@
                                 btnMenuShow();
                                 console.info( parameter.object.data("name") + " - Menu Loaded!");
 
-                                $("a").link({container:$(".subbody"), afterAction: close});
+                                $(".link").link({container: parameter.content, afterAction: close});
 
                             }else{
 
@@ -88,14 +84,14 @@
                         },
                         timeout: 10000,
                         beforeSend: function(){
-
-                            parameter.btn_menu.show();
-                            parameter.btn_menu.append('<i class="fa fa-refresh fa-spin"></i>');
+                            
+                            btnMenuHide();
+                            parameter.btn_menu.addClass('icon-spinner9');
 
                         },
                         complete:function(){
 
-                            parameter.btn_menu.find(".fa-refresh").remove();
+                            parameter.btn_menu.removeClass('icon-spinner9');
 
                         }
                     });
@@ -111,11 +107,7 @@
             
             parameter.btn_menu.on("click", open_close);
             
-            parameter.content.on("click", close);
-            
             parameter.object.find("a").on("click", close);
-            
-            parameter.object.trigger("loadMenu");
             
         });
         

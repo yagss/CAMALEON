@@ -92,11 +92,23 @@ require_once('conexion.php');
 			
 		}
 			
-//			
-//		public static function buscar($parametro,$conexion){
-//		$parameter=array();
-//			} 
-//			
+			
+		public static function buscar($parametro,$conexion){
+		$gbd = new Conexion();
+		
+		$consulta='select cargarcuenta2(?);';
+		$parameter= array(
+		0=>$parametro
+		);
+		
+			$operation = $gbd->select($consulta, $parameter);
+			 
+			print_r($operation);
+	
+			} 
+			
+			
+			
 		public function actualizaTodo($nombre,$descripcion,$ajuste,$reqta,$reqestado){
 					
 			$gbd = new Conexion();
@@ -120,7 +132,7 @@ require_once('conexion.php');
                 				
 			        $operation = $gbd->dml($parameters);
 			
-			print_r($operation);
+			
 			} 
 			
 	//	public static function actualizaEstado($conexion){
@@ -160,9 +172,10 @@ require_once('conexion.php');
 		 //echo $grupo->getCuenta();
 	     // print_r (PUCCuentaAuxiliar::listar('110505',$conexion));
 		  
-		PUCCuentaAuxiliar::registrar('Camila','Esta es la cuenta auxiliar para calvear al mechudo','MENSUAL','TRUE','TRUE','110505','11050515',$conexion);
+		//PUCCuentaAuxiliar::registrar('Camila','Esta es la cuenta auxiliar para calvear al mechudo','MENSUAL','TRUE','TRUE','110505','11050515',$conexion);
        //$actualiza = new PUCCuentaAuxiliar('11050505',$conexion);
           //$actualiza->actualizaTodo('PERRA TONTA','La pichona esta gorda y es fea','MENSUAL','TRUE','TRUE');
+	  PUCCuentaAuxiliar::buscar('1',$conexion);
 	  
 ?>
 </body>

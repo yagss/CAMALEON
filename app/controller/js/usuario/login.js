@@ -8,6 +8,8 @@ $(document).ready(function(){
         $("#login").fadeToggle('slow','swing');
     });
     
+    menu("hide");
+    
     // result action
     var reload = function(result, msg){
         

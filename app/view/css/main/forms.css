@@ -13,7 +13,6 @@
     margin-right:2%; margin-left:2%;
     text-align:left;
     vertical-align:middle;
-    border-bottom: 1px solid #bdbdbd;
 }
 
 .form .fieldbox.width_10 {width: 95%;}
@@ -50,12 +49,12 @@
 }
 
 .form .fieldbox.textbox label.focusin {
-    font-size: 0.7em;color: #9e9e9e;
+    font-size: 0.7em;color: #00b74d;
     bottom: 26px;
 }
 
 .form .fieldbox.textbox label.active {
-    font-size: 0.7em;color:#9e9e9e;
+    font-size: 0.7em;color: #00b74d;
     bottom: 26px;
 }
 .form .fieldbox.textbox label.hastext{
@@ -67,13 +66,13 @@
     width: 100%;
     margin: auto;
     background-color: transparent;
-    border: none; 
+    border: none; border-bottom: 1px solid #bdbdbd;
     font-size: 1em; resize: none;
     overflow: hidden;
 }
 
 .form .fieldbox.textbox .field.active{
-    border:2px solid #00b74d;color:#2196F3;
+    border:2px solid #00b74d;
 }
 
 .form .button{
@@ -97,19 +96,21 @@
 
 /*ESCRITORIO*/
 @media screen and (max-width:1021px){
+    
    .form .fieldbox{
        margin-right:1%; margin-left:1%;
        
     }
-    
-    
+
 }
+
 @media screen and (max-width:979px){
-   .form .fieldbox{
-    margin-right:2%; margin-left:2%;
-    margin-top:3%;
-    margin-bottom: 3%;
-     width: 80%;
+    
+    .form .fieldbox{
+        margin-right:2%; margin-left:2%;
+        margin-top:3%;
+        margin-bottom: 3%;
+        width: 80%;
     }
     
     
@@ -118,44 +119,44 @@
 /*MOVIL*/
 @media screen and (max-width:640px){
     
-   .form .fieldbox{
-    
-    margin-top:5%;
-    margin-bottom: 6%;
-     width: 80%;
+    .form .fieldbox{
+        margin-top:5%;
+        margin-bottom: 6%;
+        width: 80%;
     }
     
     
 }
 @media screen and (max-width:480px){
+    
     .form{
-        
-    }
-   .form .fieldbox{
-    
-    margin-top:5%;
-    margin-bottom: 6%;
-     width: 80%;
+
     }
     
+    .form .fieldbox{
+        margin-top:5%;
+        margin-bottom: 6%;
+        width: 80%;
+    }
     
 }
 
 @media screen and (max-width:319px){
+    
     .form{
         padding: 35px 50px;
     }
-   .form .fieldbox{
-    margin-top:9%;
-    margin-bottom: 6%;
-     width: 100%;
-    
+
+    .form .fieldbox{
+        margin-top:9%;
+        margin-bottom: 6%;
+        width: 100%;
     }
-    
+
     .form .fieldbox.textbox label{
         font-size: .65;
     }
-    
+
     
 }
 

@@ -6,9 +6,9 @@
 
     $get = json_decode(file_get_contents('php://input'));
 
-    if(!isset($get->validation)){$get->validation=false;}else{$get->validation = base64_decode($get->validation);}
+    if(!isset($get->validation)){$get->validation=false;}
     if(!isset($get->authentication)){$get->authentication=false;}else{$get->authentication = base64_decode($get->authentication);}
-    if(!isset($get->logout)){$get->logout=false;}else{$get->logout = base64_decode($get->logout);}
+    if(!isset($get->logout)){$get->logout=false;}
 
     if($get->validation){
 

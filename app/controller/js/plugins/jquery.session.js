@@ -24,16 +24,29 @@
             
             var sessionShow = function(){
             
-                parameter.object.removeClass('icon-enter');
                 parameter.object.addClass('icon-user');
                 
             };
             
             var sessionHide = function(){
             
-                parameter.object.removeClass('icon-user');
                 parameter.object.addClass('icon-enter');
                 
+            };
+            
+            var loadingShow = function(){
+                
+                parameter.object.removeClass('icon-user');
+                parameter.object.removeClass('icon-enter');
+            
+                parameter.object.addClass('icon-spinner9');
+                
+            };
+            
+            var loadingHide = function(){
+                
+                parameter.object.removeClass('icon-spinner9');
+            
             };
             
             var sessionAction = function(event, actions){
@@ -114,14 +127,13 @@
                 
                 var beforeSend = function(){
                     
-                    //parameter.object.show();
-                    parameter.object.addClass('icon-spinner9');
+                    loadingShow();
                     
                 };
                 
                 var complete = function(){
                     
-                    parameter.object.removeClass('icon-spinner9');
+                    loadingHide();
                     
                 };
                 
@@ -165,13 +177,13 @@
                 
                 var beforeSend = function(){
                     
-                    parameter.object.addClass('icon-spinner9');
+                    loadingShow();
                     
                 };
                 
                 var complete = function(){
                     
-                    parameter.object.remove("icon-spinner9");
+                    loadingHide();
                     
                 };
                 

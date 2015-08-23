@@ -15,12 +15,32 @@
     
 }
 
-#subbody #contenedor .box .menu nav a:hover {
+#subbody #contenedor .box .menu nav .navegacion{
+    width: 70%;
+    margin: auto;
+}
+
+#subbody #contenedor .box .menu nav a:hover .icon-earth {
     color: cadetblue;
 }
 
-#subbody #contenedor .box .menu h1 .icon-home2{
+#subbody #contenedor .box .menu nav a:hover .icon-circle-right {
+    color: cadetblue; 
+}
+
+#subbody #contenedor .box .menu nav .icon-circle-down{
+     color: cadetblue;
+}
+#subbody #contenedor .box .menu nav .icon-arrow-right2, .icon-arrow-down-right2{
+    font-size: 0.7em;
+}
+#subbody #contenedor .box .menu nav  .children li a:hover {
+    color: cadetblue;
+}
+
+#subbody #contenedor .box .menu h1 .icon-home{
     font-size: 1em;
+    
 }
 
 #subbody #contenedor .box .menu a .icon-earth{
@@ -28,9 +48,11 @@
 }
 
 #subbody #contenedor .box .menu h1{
+   text-decoration: underline;
+    text-decoration: overline;
     font-family: gothic;
     font-size: 1.5em;
-    color: #fff;
+    color: #528688;
     text-align: center;
     margin: 8px;
     padding: 11px;
@@ -42,12 +64,9 @@
     margin-left: 5%;
 }
 
-
-
-#subbody #contenedor .box .menu .icon-play3{
-    font-size: 0.7em; 
+#subbody #contenedor .box .menu nav ul li ul .children.inte{
+    margin-left: 10%;
 }
-
 
 #subbody #contenedor .box .menu .submenu .children{
     display: none;

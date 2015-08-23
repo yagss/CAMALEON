@@ -15,15 +15,28 @@
 }
 
 .contenido .home a span{
-    background: #c50038;
     border-radius: 50%;
-    margin:10px;   
+    margin:10px;  
 }
 
 .contenido .home a .icon-circle-up { 
     font-size: 5em;
-    color: #fff;
+    color: #7b7373;
 }
 
+.contenido .home .sub-cont .opcion{
+    width: 250px;
+    text-align: left;
+    margin: auto;
+    
+}
+.contenido .home .sub-cont .opcion a{
+    color: #5c5858;
+    font-family: gothic;
+    margin: 6px;
+}
 
+.contenido .home .sub-cont .opcion a:hover{
+    color: #253cba;
+}
 

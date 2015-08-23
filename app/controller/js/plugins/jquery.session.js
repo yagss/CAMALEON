@@ -94,7 +94,7 @@
                     if(result.ejecution==false){
 
                         console.error("Ejecution Validation Error - " + result.error);
-                        alert("error", "fa fa-times", "Error en la ejecución de validación.");
+                        alert("error", "icon-cross", "Error en la ejecución de validación.");
                         sessionHide();
                         loadLogin();
 
@@ -158,7 +158,7 @@
                     if(result.ejecution==true){
 
                         console.info("Ejecution Logout Ok!");
-                        alert("info", "fa fa-check", "Sesión de usuario terminada.");
+                        alert("info", "icon-checkmark", "Sesión de usuario terminada.");
                         sessionHide();
                         
                         if(action!=null){action()}
@@ -169,7 +169,7 @@
                     }else if(result.ejecution==false){
 
                         console.error("Ejecution Logout Error - " + result.error);
-                        alert("error", "fa fa-times", "Error en la ejecución de cierre de sesión.");
+                        alert("error", "icon-cross", "Error en la ejecución de cierre de sesión.");
                         
                     }
                     

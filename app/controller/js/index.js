@@ -1,6 +1,20 @@
 // JavaScript Document
 
 $(document).ready(function(){
+    
+    $(".notifications").cNotification();
+    
+    window.alert = function(type, icon, message){
+        
+        $(".notifications").trigger("show", {type:"msg", subtype:type, icon:icon, message:message});
+        
+    };
+    
+    window.confirm = function(type, icon, message, affirmative, negative){
+        
+        $(".notifications").trigger("show", {type:"confirm", subtype:type, icon:icon, message:message, affirmative:affirmative, negative:negative});
+        
+    };
                     
     $("#contenedor").contentManagement({cover: $(".cover")});
     

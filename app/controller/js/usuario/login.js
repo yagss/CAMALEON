@@ -20,7 +20,7 @@ $(document).ready(function(){
             
         }else{
             
-            alert("error","fa fa-times",msg);
+            alert("error","icon-cross",msg);
             
         }
         
@@ -38,7 +38,7 @@ $(document).ready(function(){
         
         $(".cover").removeClass("show");
         var btn_enable = function(){$("#login").find(".button").prop("disabled", false);};
-        setTimeout(btn_enable, 5000);
+        setTimeout(btn_enable, 8000);
         
     };
     

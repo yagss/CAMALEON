@@ -41,7 +41,7 @@
 
                 if($usuario->getEstado()){
 
-                    if($usuario->verificarPassword(base64_decode($get->password), $gbd)){
+                    if($usuario->verificarPassword(base64_decode($get->cryptpass), $gbd)){
 
                         session_start();
                         $_SESSION['usuario'] = serialize($usuario);
@@ -57,7 +57,7 @@
                         $operation['result']=false;
                         $operation['message'] = "La contraseña es incorrecta!";
 
-                        $log = Log::registro($usuario->getID(), "error", "Denegacion de acceso al sistema. - Contraseña incorrecta. {".md5($get->password)."}", $gbd);
+                        $log = Log::registro($usuario->getID(), "error", "Denegacion de acceso al sistema. - Contraseña incorrecta. {".$get->cryptpass."}", $gbd);
                         $operation['log'] = $log;
 
                     }

@@ -9,7 +9,7 @@
 		private $clave;
 
 		public function __construct(){
-			$this->clave = '$1$$c9.L7%n#';
+			$this->clave = '$2y$07$3.75Tl6nGu6jeth9A1Go4iTm.$';
 		}
 
 		public function getID(){
@@ -50,7 +50,6 @@
 		public function verificarPassword($password, $conexion){
 
 			$consulta = 'SELECT verificarPassword(?, ?) AS result;';
-
 			$parameter = array(0 => $this->id, 1 => crypt($password, $this->clave));
 
 			$operation = $conexion->select($consulta, $parameter);

@@ -4,56 +4,54 @@
     
     <form action="#" class="form cuenta">
        <h1>Cuenta auxiliar</h1> 
-        <div class="fieldbox textbox width_2">
+        <div class="fieldbox textbox width_10">
          <label>SUBCUENTA</label>
          <input class="field" type="search"/>
         </div>
         
-        <div class="fieldbox textbox width_5">
+        <div class="fieldbox textbox width_7">
             <label>NOMBRE SUBCUENTA</label>
             <input class="field" type="text"/>
-        </div>
+        </div><br>
         
-        <div class="fieldbox textbox width_2">
+        <div class="fieldbox textbox width_3">
             <label>CODIGO</label>
          <input class="field" type="text"/>
         </div>
         
-        <div class="fieldbox textbox width_9">
+        <div class="fieldbox textbox width_10">
             <label>NOMBRE</label>
             <input class="field" type="text"/>
         </div>
         
-        <div class="fieldbox textbox width_9">
+        <div class="fieldbox textbox width_10">
             <label>DESCRIPCION</label>
             <input id="descripcion" class="field"type="text"/>
         </div>
         
-        <div class="fieldbox textbox width_3">
-            <label>CUENTA AJUSTE</label>
-            <input list="ajuste" class="field"/>
-                <datalist id="ajuste">
-                    <option value="Anual">
-                    <option value="Mensual">
-                </datalist>
+        <div class="fieldbox select width_4">
+            <!--<label>CUENTA AJUSTE</label>-->
+                <select style="border-bottom: 1px solid #bdbdbd;">
+                    <option value="Anual">ANUAL</option>
+                    <option value="Mensual">MENSUAL</option>
+                </select>
         </div>
         
-        <div class="fieldbox textbox width_3">
+        <div class="fieldbox rc width_4">
             <label>ESTADO</label>
-            <input list="estado" class="field"/>
-                <datalist id="estado">
-                    <option value="Activo">
-                    <option value="Inactivo">
-                </datalist>
+            <div class="status">
+                 <span>Activo</span><input type="radio" class="radiobutton" value="true" name="estado"><br>
+                 <span>Inactivo</span><input type="radio" class="radiobutton" value="false" name="estado">
+            </div>
+            
         </div>
         
-        <div class="fieldbox textbox width_3">
-            <label>REQUIERE TERCERO O ACTIVO</label>
-            <input list="tercero" class="field"/>
-                <datalist id="tercero">
-                    <option value="Si">
-                    <option value="No">
-                </datalist>
+        <div class="fieldbox select width_2">
+            <!--<label>REQUIERE TERCERO O ACTIVO</label>-->
+              <select style="border-bottom: 1px solid #bdbdbd;">
+                    <option value="Si">SI</option>
+                    <option value="No">NO</option>
+                </select>
         </div>
  
     </form><br>

@@ -4,6 +4,7 @@
     padding: 15px;
     text-align: center;
     overflow: hidden;
+    
         
 }
 
@@ -76,7 +77,42 @@
 .form .fieldbox.textbox .field.active{
     border:2px solid #00b74d;
 }
+.form .fieldbox.rc label{
+    display: block;
+    color:#9c9c9c;
+    border-bottom: 1px solid #bdbdbd;
+}
+.form .fieldbox.rc .radiobutton{
+    margin-top: 3.6px;
+    float: left;
+    
+}
+.form .fieldbox .status{
+    position: absolute;
+    margin-top: 5px;
+    
+}
+.form .fieldbox .status span{
+    margin-left: 10px;
+    color: #000;
+}
+.form .fieldbox.select {
+   color:#9c9c9c; 
+   border-bottom: 1px solid #bdbdbd; 
+}
+.form .fieldbox.select select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    color: #9E9E9E;
+    border: none;
+    width: 100%;
+    font-family: 'gothic' !important;
+}
 
+.form .fieldbox.select select.selection{
+    color: #212121;
+}
 .form .button{
     display: inline-block;
     vertical-align: bottom;

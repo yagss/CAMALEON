@@ -1,6 +1,8 @@
 
 <?php 
 
+	//require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/conexion.php');
+
 	require_once('pucsubcuenta.php');
 
 	class PUCCuentaAuxiliar extends PUC{
@@ -65,7 +67,7 @@
 
 			$parameters[] = array( 'consulta' => $consulta,'parameter' => $parameter,);
 
-			$operation = $conexion->dml($consulta, $parameter);
+			$operation = $conexion->dml($parameters);
 			return $operation;
 
 		}
@@ -73,7 +75,7 @@
 
 		public static function buscar($parametro, $conexion){
 
-			$consulta='select cargarcuenta2(?);';
+			$consulta='select buscarCuentaAuxiliar(?);';
 			$parameter= array(0=>$parametro);
 
 			$operation = $conexion->select($consulta, $parameter);
@@ -81,21 +83,26 @@
 
 		} 
 
-		public function actualizaTodo($nombre, $descripcion, $ajuste, $reqta, $reqestado, $conexion){
+		public function actualizar($nombre, $descripcion, $ajuste, $reqta, $reqestado, $subcuenta, $id, $conexion){
 
-			$consulta='update cuenta_auxiliar set nombre=?, descripcion=?, ajuste=?, reqta=?, reqestado=? where cntaux_id=?;';
+			$consulta='update cuenta_auxiliar set nombre=?, descripcion=?, ajuste=?, reqta=?, reqestado=?, cntaux_scntid=?, cntaux_id=? where cntaux_id=?;';
 			$parameter[] = array(
 				0=>$nombre,  
 				1=>$descripcion,
 				2=>$ajuste,
 				3=>$reqta,
-				4=>$reqestado, 
-				5=>$this->id,
+				4=>$reqestado,
+				5=>$subcuenta,
+				6=>$id, 
+				7=>$this->id,
 			);
 
 			$parameters[] = array('consulta' => $consulta, 'parameter' => $parameter);
 
-			$operation = $conexion->dml($consulta, $parameter);
+			$operation = $conexion->dml($parameters);
+
+			if($operation['result']){PUCCuentaAuxiliar($id, $conexion);}
+
 			return $operation;
 
 		} 
@@ -111,5 +118,13 @@
 		}	
 
 	}
-	  
+
+	//$conexion = new Conexion();
+	//$operation = PUCCuentaAuxiliar::registrar('BANCOLOMBIA','CUENTA DE AHORROS NUMERO 123456789','MENSUAL','1','1','112005','11200501', $conexion);
+	//$operation = PUCCuentaAuxiliar::buscar('B',$conexion);
+	//$operation = PUCCuentaAuxiliar::listar('112005',$conexion);
+	//$cuenta = new PUCCuentaAuxiliar('11200501', $conexion);
+	//$operation = $cuenta->actualizar('BANCO CAJA SOCIAL','CUENTA CORRIENTE NUMERO 123456789','ANUAL','1','1','112005','11200501', $conexion);
+	//print_r($operation);
+
 ?>

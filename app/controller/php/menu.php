@@ -4,6 +4,19 @@
 
     if($menu->showMenu){
         
+        ob_start();
+            
+        ?>
+
+        <div class="user-name">
+            <p>Administrador</p>
+            <a href="#">Salir</a>
+        </div>
+
+        <?php
+
+        $operation['result'] = ob_get_clean();
+        
         if($menu->name == "Home"){
             
             ob_start();
@@ -19,7 +32,7 @@
 
             <?php
             
-            $operation['result'] = ob_get_clean();
+            $operation['result'] .= ob_get_clean();
             $operation['ejecution'] = true;
             
             echo json_encode($operation);
@@ -33,6 +46,7 @@
             <script type="text/javascript" src="/app/controller/js/menu.js"></script>
 
             <nav>
+                
                 <h1><span class="icon-earth"></span> MODULO ADMINISTRATIVO</h1>
                 
                     <div class="navegacion">
@@ -60,7 +74,7 @@
 
             <?php
             
-            $operation['result'] = ob_get_clean();
+            $operation['result'] .= ob_get_clean();
             $operation['ejecution'] = true;
             
             echo json_encode($operation);

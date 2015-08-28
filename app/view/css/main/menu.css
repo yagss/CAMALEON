@@ -4,6 +4,29 @@
 
 }
 
+#subbody #contenedor .box .menu .user-name{
+    width: 300px;
+    top:3%;
+    right: 1%;
+    position: absolute;
+    text-align: right;
+/*    background: #e3d745;*/    
+}
+
+#subbody #contenedor .box .menu .user-name p,.user-name a {
+    font-family: Aldo-SemiBold;
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+#subbody #contenedor .box .menu .user-name a{
+    margin: 10px;
+    text-decoration: none;
+}
+
+#subbody #contenedor .box .menu .user-name a:hover{
+    color:  cadetblue;  
+}
 #subbody #contenedor .box .menu nav a {
     text-decoration: none;
     font-family: gothic;

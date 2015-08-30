@@ -16,7 +16,7 @@
     font-family: gothic;
     font-size: 1.4em;
     top: 50px;
-    left: 190px;
+    left: 90px;
  
 }
 
@@ -76,11 +76,15 @@
 .cuentaauxiliar div:nth-child(9) {
     
     float: left;
-    
+}
+.cuentaauxiliar div:nth-child(10){
+    float: left;
 }
 
 @media screen and (max-width:480px;){
-    .form .fieldbox{display:block;}
+    .form .fieldbox{
+        display:block;
+    }
     
     .cuentaauxiliar div:nth-child(2){width: 100%}
     .cuentaauxiliar div:nth-child(3){width: 100%}
@@ -90,6 +94,13 @@
     .cuentaauxiliar div:nth-child(7){width: 100%}
     .cuentaauxiliar div:nth-child(8){width: 100%}
     .cuentaauxiliar div:nth-child(9){width: 100%}
-}
+    .cuentaauxiliar div:nth-child(10){
+        top:50px;
+        z-index: 6;
+        width:100%; 
+        
+    } 
+    
+    
 
- 
+}

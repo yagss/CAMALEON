@@ -74,6 +74,10 @@ $(document).ready(function(){
     });*/
     
     $('.contentrow').rowdespl();
+    
+    $('.celd').click(function(){
+        $('.descripcion').fadeToggle(100);
+    });
        
 });
 

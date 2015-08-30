@@ -98,7 +98,7 @@
 }
 .form .fieldbox.select {
    color:#9c9c9c; 
-   border-bottom: 1px solid #bdbdbd; 
+   border-bottom: 1px solid #bdbdbd;
 }
 .form .fieldbox.select select{
     -moz-appearance: none;
@@ -126,10 +126,24 @@
     -webkit-box-shadow: 0px 1px 2px #757575;
 }
 
+
 .form .button:active{   
     box-shadow: 0px 0px 0px #757575;
     -moz-box-shadow: 0px 0px 0px #757575;
     -webkit-box-shadow: 0px 0px 0px #757575;
+}
+
+.form button{
+    padding: 10px;
+    border: none;background-color: #28db4a;
+    color: white;
+    box-shadow:-1px 1px 6px #757575;
+    position: absolute;
+    right: 14%;
+    bottom: 5%;
+}
+.form button:click{
+    box-shadow: none;
 }
 
 /*ESCRITORIO*/
@@ -168,13 +182,13 @@
 @media screen and (max-width:480px){
     
     .form{
-
+        
     }
     
     .form .fieldbox{
         margin-top:5%;
         margin-bottom: 6%;
-        width: 80%;
+        width: 100%;
     }
     
 }
@@ -195,7 +209,7 @@
         font-size: .65;
     }
 
-    
+   
 }
 
 

@@ -115,6 +115,27 @@
     width: 1024px;
 }
 
+#subbody #contenedor .box .contenido .btnCloseContent {
+    position: absolute;
+    right: 0;
+    border: 0 none;
+    background-color: transparent;
+    color: #E57373;
+    margin: 5px;
+}
+
+#subbody #contenedor .box .contenido .btnCloseContent span{
+    font-size: 0.8em;
+}
+
+#subbody #contenedor .box .contenido .btnCloseContent:hover {
+    color: #EF5350;
+}
+
+#subbody #contenedor .box .contenido .btnCloseContent:active {
+    color: #F44336;
+}
+
 #subbody footer{
     position: absolute;
     left:0;bottom:-70px; 

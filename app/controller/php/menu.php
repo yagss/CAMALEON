@@ -8,7 +8,7 @@
             
         ?>
 
-        <script type="text/javascript" src="/app/controller/js/menu.js"></script>
+        <script type="text/javascript" src="/app/controller/js/menu/menu.js"></script>
 
         <div class="user-name">
             <p>Administrador</p>

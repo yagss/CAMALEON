@@ -8,9 +8,11 @@
             
         ?>
 
+        <script type="text/javascript" src="/app/controller/js/menu.js"></script>
+
         <div class="user-name">
             <p>Administrador</p>
-            <a href="#">Salir</a>
+            <a href="#" id="logout">Salir</a>
         </div>
 
         <?php
@@ -22,8 +24,6 @@
             ob_start();
             
             ?>
-
-            <script type="text/javascript" src="/app/controller/js/menu.js"></script>
 
             <nav>
                 <h1><span class="icon-home2"></span> INICIO</h1>
@@ -42,8 +42,6 @@
             ob_start();
             
             ?>
-
-            <script type="text/javascript" src="/app/controller/js/menu.js"></script>
 
             <nav>
                 

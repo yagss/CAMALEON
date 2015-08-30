@@ -22,6 +22,18 @@ $(document).ready(function(){
         }
        
     });
+    
+    $("#logout").on("click", function(){
+        
+        var action = function(){
+
+            $(".menu").trigger("btnMenuHide");
+
+        };
+
+        $("#session").trigger("logout", action);
+        
+    });
 
 });
 

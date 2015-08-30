@@ -49,12 +49,12 @@
                 
                     <div class="navegacion">
                         <ul>
-                            <li class="submenu"><a href="#"><span class="icon-circle-right"></span> USUARIO </a>
+                            <!--<li class="submenu"><a href="#"><span class="icon-circle-right"></span> USUARIO </a>
                                 <ul class="children">
                                     <li><a href="#">Agregar Usuario</a></li>
                                     <li><a href="#">Buscar Usuario</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li class="submenu"><a href="#"><span class="icon-circle-right"></span> DATOS Y VARIABLES </a>
                                 <ul  class="children">
                                     <li class="submenu"><a href="#"><span class="icon-arrow-right2"></span> PUC</a>
@@ -63,7 +63,7 @@
                                             <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/busqueda.html" data-name="Busqueda PUC">Buscar cuenta</a></li>
                                         </ul>
                                     </li>
-                                    <li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>
+                                    <!--<li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>-->
                                 </ul>
                             </li>
                         </ul>

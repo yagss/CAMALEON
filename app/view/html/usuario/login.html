@@ -8,18 +8,22 @@
             
             <form class="form" id="login" method="post" action="/app/controller/php/usuario/session.php">
                 
-                <input type="hidden" name="authentication" value="true">
+                <div class="subform">
+                
+                    <input type="hidden" name="authentication" value="true">
 
-                <div class="fieldbox textbox">
-                    <label>USER</label>
-                    <input class="field" name="nombre_usuario" type="text"/>
-                </div>
-                <div class="fieldbox textbox">
-                    <label>PASSWORD</label>
-                    <input class="field" name="cryptpass" type="password"/>
-                </div>
+                    <div class="fieldbox textbox">
+                        <label>USER</label>
+                        <input class="field" name="nombre_usuario" type="text"/>
+                    </div>
+                    <div class="fieldbox textbox">
+                        <label>PASSWORD</label>
+                        <input class="field" name="cryptpass" type="password"/>
+                    </div>
 
-                <input class="button" type="submit" value="ENTRAR">
+                    <input class="button" type="submit" value="ENTRAR">
+                    
+                </div>
 
             </form><br>
 

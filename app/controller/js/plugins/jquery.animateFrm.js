@@ -62,6 +62,46 @@
         
     }
     
+    $.fn.animateSelect = function(parameters){
     
+        this.each(function(){
+        
+            var parameter = $.extend({
+                select: $(this)
+            }, parameters);
+            
+            var selection = function(){
+            
+                parameter.select.find(".field").addClass("selection");
+            
+            };
+            
+            var normal = function(){
+            
+                parameter.select.find(".field").removeClass("selection");
+            
+            };
+            
+            var change = function(){
+            
+                if(parameter.select.find(".field").val() == ""){
+                
+                    normal();
+                    
+                }else if(parameter.select.find(".field").val() != ""){
+                
+                    selection();
+                    
+                }
+            
+            };
+            
+            parameter.select.find(".field").on("selection", selection);
+            parameter.select.find(".field").on("normal", normal);
+            parameter.select.find(".field").on("change", change);
+            
+        });
+        
+    }
     
 }(jQuery));

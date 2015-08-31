@@ -1,60 +1,84 @@
- <link rel="stylesheet" type="text/css" href="/app/view/css/administracion/contabilidad/puc/cuenta_auxiliar.css">
- <script src="/app/controller/js/administracion/contabilidad/puc/cuenta_auxiliar/form.js"></script>
-   <div class="cuentaauxiliar">
-    
-    <form action="#" class="form cuenta">
-       <h1>Cuenta auxiliar</h1> 
-        <div class="fieldbox textbox width_10">
-         <label>SUBCUENTA</label>
-         <input class="field" type="search"/>
-        </div>
+<link rel="stylesheet" type="text/css" href="/app/view/css/administracion/contabilidad/puc/cuenta_auxiliar.css">
+<script src="/app/controller/js/administracion/contabilidad/puc/cuenta_auxiliar/form.js"></script>
+
+<div class="box">
+    <div class="contenido">
         
-        <div class="fieldbox textbox width_7">
-            <label>NOMBRE SUBCUENTA</label>
-            <input class="field" type="text"/>
-        </div><br>
-        
-        <div class="fieldbox textbox width_3">
-            <label>CODIGO</label>
-         <input class="field" type="text"/>
-        </div>
-        
-        <div class="fieldbox textbox width_10">
-            <label>NOMBRE</label>
-            <input class="field" type="text"/>
-        </div>
-        
-        <div class="fieldbox textbox width_10">
-            <label>DESCRIPCION</label>
-            <input id="descripcion" class="field"type="text"/>
-        </div>
-        
-        <div class="fieldbox select width_4">
-            <!--<label>CUENTA AJUSTE</label>-->
-                <select style="border-bottom: 1px solid #bdbdbd;">
-                    <option value="Anual">ANUAL</option>
-                    <option value="Mensual">MENSUAL</option>
-                </select>
-        </div>
-        
-        <div class="fieldbox rc width_4">
-            <label>ESTADO</label>
-            <div class="status">
-                 <span>Activo</span><input type="radio" class="radiobutton" value="true" name="estado"><br>
-                 <span>Inactivo</span><input type="radio" class="radiobutton" value="false" name="estado">
-            </div>
+        <div class="subcontenido cuenta_auxiliar">
             
+            <h1>Cuenta auxiliar</h1><br>
+
+            <form class="form" id="cuenta_auxiliar" action="#">
+                
+                <div class="subform">
+                
+                    <div class="fieldbox textbox width_3">
+                        <label>COD. SUBCUENTA</label>
+                        <input class="field" type="search"/>
+                    </div>
+
+                    <div class="fieldbox textbox width_7">
+                        <label>NOMBRE SUBCUENTA</label>
+                        <input class="field" type="text"/>
+                    </div><br>
+
+                    <div class="fieldbox textbox width_3">
+                        <label>COD. CUENTA</label>
+                        <input class="field" type="text"/>
+                    </div>
+
+                    <div class="fieldbox textbox width_10">
+                        <label>NOMBRE CUENTA</label>
+                        <input class="field" type="text"/>
+                    </div>
+
+                    <div class="fieldbox textbox width_10">
+                        <label>DESCRIPCION CUENTA AUXILIAR</label>
+                        <input class="field" id="descripcion" type="text"/>
+                    </div>
+
+                    <div class="fieldbox select width_4">
+                        <select class="field">
+                            <option value="">TIPO DE AJUSTE</option>
+                            <option value="Anual">ANUAL</option>
+                            <option value="Mensual">MENSUAL</option>
+                        </select>
+                    </div>
+
+                    <div class="fieldbox select width_4">
+                        <select class="field">
+                            <option value="">RQ. TERCERO O ACTIVO</option>
+                            <option value="Si">SI</option>
+                            <option value="No">NO</option>
+                        </select>
+                    </div>
+                    
+                    <div class="fieldbox rc width_4">
+                        <label class="placeholder">ESTADO</label>
+                        <div class="option">
+                            <input id="std_activo" class="radiobutton" type="radio" name="estado" value="true">
+                            <label for="std_activo">ACTIVO</label>
+                        </div>
+                        <div class="option">
+                            <input id="std_inactivo" class="radiobutton" type="radio" name="estado" value="false">
+                            <label for="std_inactivo">INACTIVO</label>
+                        </div>
+                    </div><br>
+
+                    <button class="button">CREAR</button>
+                
+                </div>
+
+            </form><br>
+            
+            <button class="btnCloseContent"><span class="icon-cross"></span></button>
+
         </div>
         
-        <div class="fieldbox select width_2">
-            <!--<label>REQUIERE TERCERO O ACTIVO</label>-->
-              <select style="border-bottom: 1px solid #bdbdbd;">
-                    <option value="Si">SI</option>
-                    <option value="No">NO</option>
-                </select>
-        </div>
-    <button>CREAR</button>
-    </form>
-       
+    </div>
+</div>
+
+<div class="box menu">
+    <div class="menu"></div>
 </div>
                             

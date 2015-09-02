@@ -1,6 +1,6 @@
 <?php 
 
-	require_once('puccuenta.php'); 
+	require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/puc/puccuenta.php'); 
  
 	class PUCSubcuenta extends PUC{
 

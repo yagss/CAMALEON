@@ -56,8 +56,6 @@
 				}
 				$this->commit();
 				if($sentencia->rowCount()>0){
-					$operation['result'] = $sentencia->fetch();
-				}else{
 					$operation['result'] = $sentencia->rowCount();
 				}
 				$operation['ejecution'] = true;			

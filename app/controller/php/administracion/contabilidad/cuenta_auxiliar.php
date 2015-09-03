@@ -15,11 +15,11 @@
     	$get = json_decode(file_get_contents('php://input'));
 
         if(!isset($get->registrar)){$get->registrar=false;}else{$get->registrar = base64_decode($get->registrar);}
-        /*if(!isset($get->loadData)){$get->loadData=false;}
-        if(!isset($get->buscar)){$get->buscar=false;}
-        if(!isset($get->instanciar)){$get->instanciar=false;}
-        if(!isset($get->actualizar)){$get->actualizar=false;}
-        if(!isset($get->borrar)){$get->borrar=false;}*/
+        if(!isset($get->loadData)){$get->loadData=false;}
+        // if(!isset($get->buscar)){$get->buscar=false;}
+        // if(!isset($get->instanciar)){$get->instanciar=false;}
+        // if(!isset($get->actualizar)){$get->actualizar=false;}
+        // if(!isset($get->borrar)){$get->borrar=false;}
 
         if($get->registrar){
 
@@ -44,6 +44,13 @@
                     $log = Log::registro($usuario->getID(), "info", "Registro de información. - Cuenta Auxiliar. {".$get->nombre.", ".$get->descripcion.", ".$get->ajuste.", ".$get->reqta.", ".$get->estado.", ".$get->subcuenta.", ".$get->id."}", $gbd);
 
                     $cuenta_auxiliar = new PUCCuentaAuxiliar($get->id, $gbd);
+                    $cuenta_auxiliar->cargarSubcuenta($gbd);
+                    $subcuenta =  $cuenta_auxiliar->getSubcuenta();
+                    $subcuenta->cargarCuenta($gbd);
+                    $cuenta =  $subcuenta->getCuenta();
+                    $cuenta->cargarGrupo($gbd);
+                    $grupo = $cuenta->getGrupo();
+                    $grupo->cargarClase($gbd);
 
                     $_SESSION['cuenta_auxiliar'] = serialize($cuenta_auxiliar);
 
@@ -61,6 +68,34 @@
             }
 
             echo json_encode($operation);
+
+        }
+
+        if($get->loadData){
+
+            if(isset($_SESSION['cuenta_auxiliar'])){
+
+                $cuenta_auxiliar=unserialize($_SESSION['cuenta_auxiliar']);
+
+                $data['nombre'] = $cuenta_auxiliar->getNombre();
+                $data['descripcion'] = $cuenta_auxiliar->getDescripcion();
+                $data['ajuste'] = $cuenta_auxiliar->getAjuste();
+                $data['reqta'] = $cuenta_auxiliar->getReqTA();
+                $data['estado'] = $cuenta_auxiliar->getEstado();
+                $subcuenta = $cuenta_auxiliar->getSubcuenta();
+                $data['scnt_id'] = $subcuenta->getID();
+                $data['scnt_nombre'] = $subcuenta->getNombre();
+                $data['id'] = $cuenta_auxiliar->getID();
+                
+                
+                $operation['ejecution'] = true;
+                $operation['result'] = true;
+                $operation['message'] = "Se cargo correctamente la información";
+                $operation['data'] = $data;
+
+                echo json_encode($operation);
+
+            }
 
         }
 

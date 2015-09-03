@@ -25,7 +25,7 @@
 						$this->nombre = $fila['nombre'];
 						$this->descripcion = $fila['descripcion'];
 						$this->ajuste =$fila['ajuste'];
-						$this->reqestado =$fila['reqestado'];
+						$this->estado =$fila['estado'];
 						$this->reqta =$fila['reqta'];
 						$this->subcuenta =$fila['cntaux_scntid'];
 					}

@@ -4,6 +4,35 @@
 
 }
 
+#subbody #contenedor .box .menu .user-name{
+    width: 300px;
+    top:3%;
+    right: 1%;
+    position: absolute;
+    text-align: right;
+/*    background: #e3d745;*/    
+}
+
+#subbody #contenedor .box .menu .user-name p, #subbody #contenedor .box .menu .user-name a{
+    font-family: Aldo-SemiBold;
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+#subbody #contenedor .box .menu .user-name a{
+    margin: 10px;
+    text-decoration: none;
+}
+
+#subbody #contenedor .box .menu .user-name a:hover{
+    color:  cadetblue;  
+}
+
+#subbody #contenedor .box .menu nav .navegacion{
+    width: 70%;
+    margin: auto;
+}
+
 #subbody #contenedor .box .menu nav a {
     text-decoration: none;
     font-family: gothic;
@@ -12,38 +41,33 @@
     text-align: left;
     display: block;
     margin-top: 10px;
-    
 }
 
-#subbody #contenedor .box .menu nav .navegacion{
-    width: 70%;
-    margin: auto;
+#subbody #contenedor .box .menu nav a span {
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#subbody #contenedor .box .menu nav a:hover .icon-earth {
+#subbody #contenedor .box .menu nav a:hover span {
     color: cadetblue;
-}
-
-#subbody #contenedor .box .menu nav a:hover .icon-circle-right {
-    color: cadetblue; 
 }
 
 #subbody #contenedor .box .menu nav .icon-circle-down{
      color: cadetblue;
 }
-#subbody #contenedor .box .menu nav .icon-arrow-right2, .icon-arrow-down-right2{
+#subbody #contenedor .box .menu nav .icon-arrow-right2, #subbody #contenedor .box .menu nav .icon-arrow-down-right2{
     font-size: 0.7em;
 }
 #subbody #contenedor .box .menu nav  .children li a:hover {
     color: cadetblue;
 }
 
-#subbody #contenedor .box .menu h1 .icon-home{
+#subbody #contenedor .box .menu h1 span{
     font-size: 1em;
     
 }
 
-#subbody #contenedor .box .menu a .icon-earth{
+#subbody #contenedor .box .menu a span{
     font-size: 1.1em;
 }
 
@@ -56,7 +80,6 @@
     text-align: center;
     margin: 8px;
     padding: 11px;
-    
 }
 
 #subbody #contenedor .box .menu ul{
@@ -64,14 +87,10 @@
     margin-left: 5%;
 }
 
+#subbody #contenedor .box .menu .submenu .children{
+    display: none;
+}
+
 #subbody #contenedor .box .menu nav ul li ul .children.inte{
     margin-left: 10%;
 }
-
-#subbody #contenedor .box .menu .submenu .children{
-    display: none;
-    
-}
-
-
-

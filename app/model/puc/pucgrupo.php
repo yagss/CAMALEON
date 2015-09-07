@@ -1,6 +1,6 @@
 <?php 
 
-	require_once('pucclase.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/puc/pucclase.php');
 
 	class PUCGrupo extends PUC{
 

@@ -1,17 +1,19 @@
 .form{
     box-shadow:-1px 1px 6px #757575;
     margin: auto;
-    padding: 15px;
     text-align: center;
     overflow: hidden;
-    
-        
+}
+
+.subform{
+    padding: 5%;
 }
 
 .form .fieldbox{
     position: relative;
     display: inline-block;   
     margin-right:2%; margin-left:2%;
+    margin-top: 12px; margin-bottom: 12px;
     font-family: 'gothic' !important;
     text-align:left;
     vertical-align:middle;
@@ -42,7 +44,7 @@
 .form .fieldbox.textbox label{
     position: absolute;
     width: 100%;
-    bottom: 0px; left: 2px;
+    top: 2px; left: 2px;
     font-size: .95em;
     color:#9e9e9e;
     -webkit-transition:all .15s;
@@ -52,23 +54,23 @@
 
 .form .fieldbox.textbox label.focusin {
     font-size: 0.7em;color: #00b74d;
-    bottom: 26px;
+    top: -14px;
 }
 
 .form .fieldbox.textbox label.active {
     font-size: 0.7em;color: #00b74d;
-    bottom: 26px;
+    top: -14px;
 }
 .form .fieldbox.textbox label.hastext{
     font-size: 0.7em;
-    bottom: 26px;
+    top: -14px;
 }
 
 .form .fieldbox.textbox .field{
     width: 100%;
     margin: auto;
     background-color: transparent;
-    border: none; border-bottom: 1px solid #bdbdbd;
+    border: none; border-bottom: 2px solid #bdbdbd;
     font-family: 'gothic' !important;
     font-size: 1em; resize: none;
     overflow: hidden;
@@ -77,29 +79,30 @@
 .form .fieldbox.textbox .field.active{
     border:2px solid #00b74d;
 }
-.form .fieldbox.rc label{
-    display: block;
-    color:#9c9c9c;
-    border-bottom: 1px solid #bdbdbd;
+
+.form .fieldbox.rc {
+    border-bottom: none;
+    text-align: center;
+    color:#9e9e9e;
 }
-.form .fieldbox.rc .radiobutton{
-    margin-top: 3.6px;
-    float: left;
-    
-}
-.form .fieldbox .status{
+
+.form .fieldbox.rc label.placeholder{
     position: absolute;
-    margin-top: 5px;
-    
+    width: 100%;
+    top: -14px; left: 2px;
+    font-size: 0.7em;
 }
-.form .fieldbox .status span{
-    margin-left: 10px;
-    color: #000;
+
+.form .fieldbox.rc .option {
+    display: inline-block;
+    cursor: pointer; 
 }
+
 .form .fieldbox.select {
    color:#9c9c9c; 
-   border-bottom: 1px solid #bdbdbd; 
+   border-bottom: 2px solid #bdbdbd;
 }
+
 .form .fieldbox.select select{
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -113,11 +116,12 @@
 .form .fieldbox.select select.selection{
     color: #212121;
 }
+
 .form .button{
     display: inline-block;
-    vertical-align: bottom;
+    vertical-align: middle;
     padding: 9px;
-    background-color: #2196F3;
+    background-color: #28DB4A;
     color: white;
     border: none;
     font-family: 'gothic' !important;
@@ -137,20 +141,11 @@
     
    .form .fieldbox{
        margin-right:1%; margin-left:1%;
-       
     }
 
 }
 
 @media screen and (max-width:979px){
-    
-    .form .fieldbox{
-        margin-right:2%; margin-left:2%;
-        margin-top:3%;
-        margin-bottom: 3%;
-        width: 80%;
-    }
-    
     
 }
 
@@ -158,44 +153,24 @@
 @media screen and (max-width:640px){
     
     .form .fieldbox{
-        margin-top:5%;
-        margin-bottom: 6%;
-        width: 80%;
+        display: block;
+        margin-top: 24px; margin-bottom: 24px;
+    }
+    
+    .form .fieldbox.rc {
+        text-align: left;
     }
     
     
 }
-@media screen and (max-width:480px){
-    
-    .form{
 
-    }
-    
-    .form .fieldbox{
-        margin-top:5%;
-        margin-bottom: 6%;
-        width: 80%;
-    }
+@media screen and (max-width:480px){
     
 }
 
 @media screen and (max-width:319px){
-    
-    .form{
-        padding: 35px 50px;
-    }
 
-    .form .fieldbox{
-        margin-top:9%;
-        margin-bottom: 6%;
-        width: 100%;
-    }
 
-    .form .fieldbox.textbox label{
-        font-size: .65;
-    }
-
-    
 }
 
 

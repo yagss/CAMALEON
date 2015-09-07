@@ -1,8 +1,69 @@
-#subbody #contenedor .box .contenido .cuentaauxiliar{
-  width: 100%;
+.subcontenido.cuenta_auxiliar{
+    padding-top: 60px;
+    width: 82%;
+    position: relative;
+    display:block; 
+    margin: auto;
+}
+
+.cuenta_auxiliar h1{
+    font-family: gothic;
+    font-size: 1.4em;
+}
+
+.form#cuenta_auxiliar{
+    width: 90%;
+}
+
+.form#cuenta_auxiliar .textbox .field {
+    text-transform: uppercase;
+}
+
+.form#cuenta_auxiliar .textbox #descripcion {
+    text-transform: none;
+}
+
+@media screen and (max-width:1280px) {
+ 
+    .subcontenido.cuenta_auxiliar{
+        width: 88%;
+    }
+
+}
+
+@media screen and (max-width:1120px) {
+    
+    .subcontenido.cuenta_auxiliar{
+        width: 94%;
+    }
+
+}
+
+@media screen and (max-width: 960px){
+    
+    .subcontenido.cuenta_auxiliar{
+        width: 100%;
+    }
+    
+    .form#cuenta_auxiliar{
+        width: 95%;
+    }
     
 }
- .form{
+
+@media screen and (max-width: 800px){
+    
+    .subcontenido.cuenta_auxiliar{
+        width: 100%;
+    }
+    
+    .form#cuenta_auxiliar{
+        width: 100%;
+    }
+    
+}
+
+/*.form{
      width:70%; 
      margin-top: 100px;
      padding: 15px;
@@ -10,13 +71,13 @@
      height: 340px;
      
  }
- .cuentaauxiliar .form  h1{
+.cuentaauxiliar .form  h1{
     text-align: left;
     position: absolute;
     font-family: gothic;
     font-size: 1.4em;
     top: 50px;
-    left: 190px;
+    left: 90px;
  
 }
 
@@ -76,11 +137,15 @@
 .cuentaauxiliar div:nth-child(9) {
     
     float: left;
-    
+}
+.cuentaauxiliar div:nth-child(10){
+    float: left;
 }
 
 @media screen and (max-width:480px;){
-    .form .fieldbox{display:block;}
+    .form .fieldbox{
+        display:block;
+    }
     
     .cuentaauxiliar div:nth-child(2){width: 100%}
     .cuentaauxiliar div:nth-child(3){width: 100%}
@@ -90,6 +155,13 @@
     .cuentaauxiliar div:nth-child(7){width: 100%}
     .cuentaauxiliar div:nth-child(8){width: 100%}
     .cuentaauxiliar div:nth-child(9){width: 100%}
-}
+    .cuentaauxiliar div:nth-child(10){
+        top:50px;
+        z-index: 6;
+        width:100%; 
+        
+    } 
+    
+    
 
- 
+}*/

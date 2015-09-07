@@ -4,13 +4,26 @@
 
     if($menu->showMenu){
         
+        ob_start();
+            
+        ?>
+
+        <script type="text/javascript" src="/app/controller/js/menu/menu.js"></script>
+
+        <div class="user-name">
+            <p>Administrador</p>
+            <a href="#" id="logout">Salir</a>
+        </div>
+
+        <?php
+
+        $operation['result'] = ob_get_clean();
+        
         if($menu->name == "Home"){
             
             ob_start();
             
             ?>
-
-            <script type="text/javascript" src="/app/controller/js/menu.js"></script>
 
             <nav>
                 <h1><span class="icon-home2"></span> INICIO</h1>
@@ -19,7 +32,7 @@
 
             <?php
             
-            $operation['result'] = ob_get_clean();
+            $operation['result'] .= ob_get_clean();
             $operation['ejecution'] = true;
             
             echo json_encode($operation);
@@ -30,19 +43,18 @@
             
             ?>
 
-            <script type="text/javascript" src="/app/controller/js/menu.js"></script>
-
             <nav>
+                
                 <h1><span class="icon-earth"></span> MODULO ADMINISTRATIVO</h1>
                 
                     <div class="navegacion">
                         <ul>
-                            <li class="submenu"><a href="#"><span class="icon-circle-right"></span> USUARIO </a>
+                            <!--<li class="submenu"><a href="#"><span class="icon-circle-right"></span> USUARIO </a>
                                 <ul class="children">
                                     <li><a href="#">Agregar Usuario</a></li>
                                     <li><a href="#">Buscar Usuario</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                             <li class="submenu"><a href="#"><span class="icon-circle-right"></span> DATOS Y VARIABLES </a>
                                 <ul  class="children">
                                     <li class="submenu"><a href="#"><span class="icon-arrow-right2"></span> PUC</a>
@@ -51,7 +63,7 @@
                                             <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/busqueda.html" data-name="Busqueda PUC">Buscar cuenta</a></li>
                                         </ul>
                                     </li>
-                                    <li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>
+                                    <!--<li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>-->
                                 </ul>
                             </li>
                         </ul>
@@ -60,7 +72,7 @@
 
             <?php
             
-            $operation['result'] = ob_get_clean();
+            $operation['result'] .= ob_get_clean();
             $operation['ejecution'] = true;
             
             echo json_encode($operation);

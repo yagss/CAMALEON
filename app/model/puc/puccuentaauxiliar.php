@@ -2,8 +2,8 @@
 <?php 
 
 	//require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/conexion.php');
-
-	require_once('pucsubcuenta.php');
+	
+	require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/puc/pucsubcuenta.php');
 
 	class PUCCuentaAuxiliar extends PUC{
 

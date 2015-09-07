@@ -24,6 +24,7 @@ $(document).ready(function(){
     var load = function(result, message, data){
         
         $("#scnt_id").val(data.scnt_id);
+        $("#scnt_nombre").val(data.scnt_nombre);
         $("#id").val(data.id);
         $("#nombre").val(data.nombre);
         $("#descripcion").html(data.descripcion);

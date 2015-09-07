@@ -63,15 +63,15 @@ class tercero{
 				}
 			}
 		}
-		public static function registrar($id,$tipo,$regimen,$gc,$conexion){
+		public static function registrar($tipo,$regimen,$gc,$conexion){
 		
-			$consulta='insert into tercero values(?,?,?,?);';
+			$consulta='insert into tercero (trc_tipo, trc_regimen, trc_gc)values(?,?,?);';
 
 			$parameter[] = array(
-				0=>$id,
-				1=>$tipo,
-				2=>$regimen,
-				3=>$gc,
+				
+				0=>$tipo,
+				1=>$regimen,
+				2=>$gc,
 				);
 
 			$parameters[] = array( 'consulta' => $consulta,'parameter' => $parameter);
@@ -112,7 +112,7 @@ class tercero{
 	
 	}
       $tercero = new Conexion();
-	  //tercero::registrar('1010','Empresa','Subsidiario','true',$conexion);
+	  tercero::registrar('persona','Sub','true',$conexion);
       //$tercero = new tercero('1010',$conexion);
 	  //$tercero->modificar('1010','Persona','Sancionatorio','false',$conexion);
 	  //tercero::buscar('1',$conexion);

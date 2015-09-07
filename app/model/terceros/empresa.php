@@ -62,19 +62,19 @@ class empresa{
 			
 			
 			}
-		public static function registrar($id,$nit,$razonsocial,$naturaleza,$fechacont,$ciudad,$direccion,$telefono,$conexion){
+		public static function registrar($nit,$razonsocial,$naturaleza,$fechacont,$ciudad,$direccion,$telefono,$conexion){
 		
-			$consulta='insert into empresa values(?,?,?,?,?,?,?,?);';
+			$consulta='insert into empresa (empr_nit,empr_rs,empr_naturaleza,empr_fechaconst,empr_cddid,empr_dir,empr_tel)values (?,?,?,?,?,?,?);';
 
 			$parameter[] = array(
-				0=>$id,
-				1=>$nit,
-				2=>$razonsocial,
-				3=>$naturaleza,
-				4=>$fechacont,
-				5=>$ciudad,
-				6=>$direccion,
-				7=>$telefono
+			
+				0=>$nit,
+				1=>$razonsocial,
+				2=>$naturaleza,
+				3=>$fechacont,
+				4=>$ciudad,
+				5=>$direccion,
+				6=>$telefono
 			);
 
 			$parameters[] = array( 'consulta' => $consulta,'parameter' => $parameter,);
@@ -117,7 +117,7 @@ class empresa{
 	}
 	
 	$conexion = new Conexion();
-	//empresa::registrar('1020','1020','debito','2015/04/04','razon social','5042','calle100','570',$conexion);
+	//empresa::registrar('1020','razon social','debito','2015/04/04','5001','calle100','570',$conexion);
 	//$empresa = new empresa('1020',$conexion);
     //$empresa->modificar('Credito','12/05/06','Vender cosas','5030','Trans8','5646567','1020',$conexion);
     //empresa::buscar('1',$conexion);

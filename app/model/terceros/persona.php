@@ -71,25 +71,23 @@ class persona{
 		
 		}
 		
-	public static function registrar($id,$nombre,$apellido,$tipodoc,$numdoc,$ciudad,$direccion,$telefono,$conexion){
+	public static function registrar($nombre,$apellido,$tipodoc,$numdoc,$ciudad,$direccion,$telefono,$conexion){
 		
-		$consulta='insert into persona values(?,?,?,?,?,?,?,?);';
+		$consulta='insert into persona(prn_nombre,prn_apellido,prn_doc,prn_numdoc,prn_cddid,prn_dir,prn_tel)                      values(?,?,?,?,?,?,?)';
 
 			$parameter[] = array(
-			    0=>$id,
-				1=>$nombre,
-				2=>$apellido,
-				3=>$tipodoc,
-				4=>$numdoc,
-				5=>$ciudad,
-				6=>$direccion,
-				7=>$telefono
+			   
+				0=>$nombre,
+			    1=>$apellido,
+				2=>$tipodoc,
+				3=>$numdoc,
+				4=>$ciudad,
+				5=>$direccion,
+				6=>$telefono
 			);
-			
-				$parameters[] = array( 'consulta' => $consulta,'parameter' => $parameter,);
+			var_dump($parameter);
+				$parameters[] = array( 'consulta' => $consulta,'parameter' => $parameter);
 				
-				
-			
 
 			$operation = $conexion->dml($parameters);
 		  print_r($operation);
@@ -132,7 +130,8 @@ class persona{
 	}
    	$conexion = new Conexion();
      
-	//persona::registrar('13','JUAN','GABRIEL','cedula','5765','5001','calle10','567865',$conexion);
+	persona::registrar('juan','martines','cedula','8080',5042,'calle100','4444',$conexion);
+
 	  //$persona = new persona('19347',$conexion);
 	   //$persona->modificar('Maria','clara','tarjeta','9807065','5042','Trans8','5444334',$conexion);
 	 //persona::buscar('r',$conexion);

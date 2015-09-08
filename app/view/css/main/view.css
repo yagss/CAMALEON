@@ -29,4 +29,22 @@
     font-size: 0.8em;
 }
 
+.view .bar{
+    width: 100%;
+    text-align: right;
+}
+
+.view .bar a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.view .bar a span{
+    font-size: 1.5em;
+    color: #757575;
+}
+
+.view .bar a span:hover{
+    color: #006C00;
+}
 

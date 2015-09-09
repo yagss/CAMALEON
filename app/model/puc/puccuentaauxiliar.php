@@ -85,7 +85,7 @@
 
 		public function actualizar($nombre, $descripcion, $ajuste, $reqta, $reqestado, $subcuenta, $id, $conexion){
 
-			$consulta='update cuenta_auxiliar set nombre=?, descripcion=?, ajuste=?, reqta=?, reqestado=?, cntaux_scntid=?, cntaux_id=? where cntaux_id=?;';
+			$consulta='update cuenta_auxiliar set nombre=?, descripcion=?, ajuste=?, reqta=?, estado=?, cntaux_scntid=?, cntaux_id=? where cntaux_id=?;';
 			$parameter[] = array(
 				0=>$nombre,  
 				1=>$descripcion,
@@ -100,8 +100,6 @@
 			$parameters[] = array('consulta' => $consulta, 'parameter' => $parameter);
 
 			$operation = $conexion->dml($parameters);
-
-			if($operation['result']){PUCCuentaAuxiliar($id, $conexion);}
 
 			return $operation;
 

@@ -4,10 +4,12 @@ $(document).ready(function(){
     
     menu("hide");
     
+     $(".link").link({container: $("#contenedor")});
+    
     $(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
     
     $("#contenedor").trigger("closePrev", "Form Cuenta Auxiliar");
-    $("#contenedor").trigger("closePrev", "Delete Cuenta Auxiliar");
+    //$("#contenedor").trigger("closePrev", "Delete Cuenta Auxiliar");
     
     var beforeSend = function(){
         

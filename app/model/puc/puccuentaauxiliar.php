@@ -75,8 +75,8 @@
 
 		public static function buscar($parametro, $conexion){
 
-			$consulta='select buscarCuentaAuxiliar(?);';
-			$parameter= array(0=>$parametro);
+			$consulta='select * from buscarCuentaAuxiliar(?);';
+			$parameter= array(0=>'%'.$parametro.'%');
 
 			$operation = $conexion->select($consulta, $parameter);
 			return $operation;

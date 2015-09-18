@@ -22,12 +22,11 @@
 
     	$get = json_decode(file_get_contents('php://input'));
         if(!isset($get->registrar)){$get->registrar=false;}else{$get->registrar = base64_decode($get->registrar);}
-
         if(!isset($get->loadData)){$get->loadData=false;}
         if(!isset($get->instanciar)){$get->instanciar=false;}
         if(!isset($get->actualizar)){$get->actualizar=false;}
-        /*if(!isset($get->buscar)){$get->buscar=false;}
-        if(!isset($get->borrar)){$get->borrar=false;}*/
+        if(!isset($get->buscar)){$get->buscar=false;}
+        //if(!isset($get->borrar)){$get->borrar=false;}
 
         if($get->registrar)
         {
@@ -61,7 +60,6 @@
 	                   
 	                    $log = Log::registro($usuario->getID(), "info", "Registro de información. - Tercero Persona. {".$get->nombre.", ".$get->apellido.", ".$get->tipo_documento.", ".$get->numero_documento.", ".$get->ciudad.", ".$get->direccion.", ".$get->telefono."}", $conexion);  
 						
-
 						//Instanciar persona con el numero de documento
 						$persona = new Persona($get->numero_documento, $conexion);
 						//$ciudad = $persona->getCiudad();
@@ -132,7 +130,7 @@
 	                }
 	                elseif(!($operation['ejecution']))
 	                {
-	                    $log = Log::registro($usuario->getID(), "error", "Registro la información. Tercero Empresa. {".$get->nit.", ".$get->razon_social.", ".$get->naturaleza." , ".$get->date.", ".$get->ciudad.", ".$get->direccion.", ".$get->telefono."} - {".$operation['error']."}", $conexion);
+	                    $log = Log::registro($usuario->getID(), "error", "Registro la información. Tercero Empresa. {".$get->nit.", ".$get->razon_social.", ".$get->naturaleza." , ".$get->fechaconst.", ".$get->ciudad.", ".$get->direccion.", ".$get->telefono."} - {".$operation['error']."}", $conexion);
 	                }
 	            }
 	            else
@@ -327,7 +325,7 @@
 	                elseif(!($operation['ejecution']))
 	                {
 
-	                    $log = Log::registro($usuario->getID(), "error", "Actualización la información. Tercero Empresa. {".$get->nit.", ".$get->razon_social.", ".$get->naturaleza." , ".$get->date.", ".$get->ciudad.", ".$get->direccion.", ".$get->telefono."} - {".$operation['error']."}", $conexion);
+	                    $log = Log::registro($usuario->getID(), "error", "Actualización la información. Tercero Empresa. {".$get->nit.", ".$get->razon_social.", ".$get->naturaleza." , ".$get->fechaconst.", ".$get->ciudad.", ".$get->direccion.", ".$get->telefono."} - {".$operation['error']."}", $conexion);
 	                }
 	            }
 	            else
@@ -341,6 +339,62 @@
             echo json_encode($operation);
 
         	}
+        }
+
+        if ($get->buscar) 
+        {
+        	$get->subcuenta = strtoupper(base64_decode($get->subcuenta));
+        	$conexion = new Conexion();
+
+        	$operation = Tercero::buscar($get->subcuenta, $conexion);
+        	if($operation['ejecution'])
+        	{
+	            $operation['message'] = "Se cargo correctamente la información";
+	        }
+	        else
+	       	{
+	            $operation['message'] = "No hay registros de terceros.";
+	        }
+
+            echo json_encode($operation);	 
+        }
+
+        if ($get->instanciar) 
+        {
+        	$get->tipo = base64_decode($get->tipo);
+        	
+        	$conexion =new Conexion();
+
+        	if ($get->tipo == "NATURAL") {
+        		$get->numero_documento =  base64_decode($get->numero_documento);
+        		//Instanciar persona por el numero de documento
+				$persona = new Persona($get->numero_documento, $conexion);
+
+				//Instanciar tercero sin conocer ID con numero de documento
+				$tercero = new Tercero();
+				$tercero->instanciarSubID($get->numero_documento, $get->tipo, $conexion);
+
+				$_SESSION['persona'] = serialize($persona);
+        		$_SESSION['tercero'] = serialize($tercero);
+        		$operation['message'] = "Se cargo correctamente la información de ". $persona->getNombre() . " " . $persona->getApellido().".";
+        	}else if($get->tipo == "JURIDICA"){
+        		$get->nit =  base64_decode($get->nit);
+        		//Instanciar empresa por el nit
+				$empresa = new Empresa($get->nit, $conexion);
+
+				//Instanciar tercero sin conocer ID con nit
+				$tercero = new Tercero();
+				$tercero->instanciarSubID($get->nit, $get->tipo, $conexion);
+				
+				$_SESSION['empresa'] = serialize($empresa);
+				$_SESSION['tercero'] = serialize($tercero);
+				$operation['message'] = "Se cargo correctamente la información de ".$empresa->getRazonSocial().".";
+        	}
+
+        	$operation["ejecution"] = true;
+        	$operation['result'] = true;
+        	
+          	echo json_encode($operation);
         }
     }
 

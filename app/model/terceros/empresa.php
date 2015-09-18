@@ -26,6 +26,15 @@
 			return $this->razonsocial;
 		}
 
+		public function getNaturaleza()
+		{
+			return $this->naturaleza;
+		}
+
+		public function getFechaconst()
+		{
+			return $this->fechaconst;
+		}
 
 		public function getCiudad(){
 			return $this->ciudad;
@@ -54,7 +63,7 @@
 						$this->id = $fila['empr_id'];
 						$this->nit = $fila['empr_nit'];
 						$this->naturaleza = $fila['empr_naturaleza'];
-						$this->fecha = $fila['empr_fechaconst'];
+						$this->fechaconst = $fila['empr_fechaconst'];
 						$this->razonsocial = $fila['empr_rs'];
 						$this->ciudad = $fila['empr_cddid'];
 						$this->direccion = $fila['empr_dir'];

@@ -21,14 +21,13 @@ $(document).ready(function(){
     $("#session").session({container: $("#contenedor"), login: '/app/view/html/usuario/login.html'});
 
     var action = function(){
-
-        $("#contenedor").trigger("load", {url: '/app/view/html/home.html', name: 'Home'});
-
+        $("#contenedor").trigger("load", {url: '/app/view/html/tercero/busqueda.html', name: 'Home'});
+        //$("#contenedor").trigger("load", {url: '/app/view/html/tercero/form.html', name: 'Home'});
     };
 
     $("#session").trigger("validation", action);
     
-    var session_validation = function(){$("#session").trigger("validation", null);};
+    var session_validation = function(){$("#csession").trigger("validation", null);};
     
     //setInterval(session_validation, 10000);
 

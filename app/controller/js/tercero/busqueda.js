@@ -43,18 +43,36 @@ $(document).ready(function(){
     };
 
     var load = function(result, message){
-    	var html = '';
+        
+    	$('#tercero_registros').empty();
+        
     	$.each(result, function(i, item){
     		if(item.hasOwnProperty('nit'))
     		{
-    			html += '<form class="form buscador juridica" id="' + item.nit + '" method="post" action="/app/controller/php/tercero/tercero.php"><input name="instanciar" type="hidden" value="true"/><input type="hidden" name="nit" value="' + item.nit + '"/><input type="hidden" name="tipo" value="' + item.tipo + '"/><div class="subform"><div class="espacio left"><h2>' + item.razon_social + '</h2><p>' + item.nit + '</p></div><div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.nit + '\');"><span class="icon-eye"></span></a></div></div></form><br>';
+                var frm = $('<form class="form buscador juridica" id="' + item.nit + '" method="post" action="/app/controller/php/tercero/tercero.php"></form>');
+                frm.append('<input name="instanciar" type="hidden" value="true"/>');
+                frm.append('<input type="hidden" name="nit" value="' + item.nit + '"/>');
+                frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
+                var subform = $('<div class="subform"></div>');
+                subform.append('<div class="espacio left"><h2>' + item.razon_social + '</h2><p>' + item.nit + '</p></div>');
+                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.nit + '\');"><span class="icon-eye"></span></a></div>');
+                frm.append(subform);
     		}
     		else if(item.hasOwnProperty('numdoc'))
     		{
-    			html += '<form class="form buscador natural" id="' + item.numdoc + '" method="post" action="/app/controller/php/tercero/tercero.php"><input name="instanciar" type="hidden" value="true"/><input type="hidden" name="numero_documento" value="' + item.numdoc + '"/><input type="hidden" name="tipo" value="' + item.tipo + '"/><div class="subform"><div class="espacio left"><h2>' + item.nombre + ' ' + item.apellido + '</h2><p>' + item.numdoc + '</p></div><div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.numdoc + '\');"><span class="icon-eye"></span></a></div></div></form><br>';
-    		} 
+                var frm = $('<form class="form buscador natural" id="' + item.numdoc + '" method="post" action="/app/controller/php/tercero/tercero.php"></form>');
+                frm.append('<input name="instanciar" type="hidden" value="true"/>');
+                frm.append('<input type="hidden" name="numero_documento" value="' + item.numdoc + '"/>');
+                frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
+                var subform = $('<div class="subform"></div>');
+                subform.append('<div class="espacio left"><h2>' + item.nombre + ' ' + item.apellido + '</h2><p>' + item.numdoc + '</p></div>');
+                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.numdoc + '\');"><span class="icon-eye"></span></a></div>');
+                frm.append(subform);
+    		}
+            $('#tercero_registros').append(frm);
     	});
-		$('#tercero_registros').html(html);
+        
+		
     }
 
     

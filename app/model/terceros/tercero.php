@@ -1,7 +1,7 @@
 
 <?php
 
-	require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/conexion.php');
+	//require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/conexion.php');
 	require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/terceros/persona.php');
 	require_once($_SERVER['DOCUMENT_ROOT'].'/app/model/terceros/empresa.php');
 

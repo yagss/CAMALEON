@@ -54,25 +54,29 @@
        border-left: 1px solid #c3c3c3;
 }
 
-.form#buscador {
+.form.buscador {
     margin: 1% 5% 0% 5%;
     
 }
 
-.form#buscador .espacio{
+.form.buscador .espacio{
     display: inline-block;
 }
 
-.form#buscador .espacio.left{
+.form.buscador .espacio.left{
     text-align: left;
     width: 75%;
     font-family: gothic;
     color: #716d6d;
 }
 
-.form#buscador .espacio.right span{
+.form.buscador .espacio.right span{
     color:#13cc30;
     font-size: 1.3em; 
+}
+
+.link{
+   text-decoration: none;
 }
 
 

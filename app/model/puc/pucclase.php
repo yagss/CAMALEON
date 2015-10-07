@@ -33,7 +33,7 @@
 
 		public static function listar($conexion){
 
-			$consulta='select * from cuenta_clase';	
+			$consulta='select * from cuenta_clase order by cntc_id;';	
 			$parameter = array();
 
 			$operation = $conexion->select($consulta, $parameter);

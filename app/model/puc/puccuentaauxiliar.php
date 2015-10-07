@@ -107,7 +107,7 @@
 
 		public static function listar($id, $conexion){
 
-			$consulta='select * from cuenta_auxiliar where cntaux_scntid=?';	
+			$consulta='select * from cuenta_auxiliar where cntaux_scntid=? order by cntaux_id;';	
 			$parameter = array(0=>$id);
 
 			$operation = $conexion->select($consulta, $parameter);

@@ -37,7 +37,7 @@
 
 		public static function listar($id,$conexion){
 
-			$consulta='select * from cuenta_grupo where cntg_cntcid=?';	
+			$consulta='select * from cuenta_grupo where cntg_cntcid=? order by cntg_id;';	
 			$parameter = array(0=>$id);
 
 			$operation = $conexion->select($consulta, $parameter);

@@ -17,7 +17,7 @@
         if(!isset($get->registrar)){$get->registrar=false;}else{$get->registrar = base64_decode($get->registrar);}
         if(!isset($get->loadData)){$get->loadData=false;}
         // if(!isset($get->buscar)){$get->buscar=false;}
-        // if(!isset($get->instanciar)){$get->instanciar=false;}
+        if(!isset($get->instanciar)){$get->instanciar=false;}else{$get->instanciar = base64_decode($get->instanciar);}
         if(!isset($get->actualizar)){$get->actualizar=false;}else{$get->actualizar = base64_decode($get->actualizar);}
         // if(!isset($get->borrar)){$get->borrar=false;}
 
@@ -87,7 +87,6 @@
                 $data['scnt_nombre'] = $subcuenta->getNombre();
                 $data['id'] = $cuenta_auxiliar->getID();
                 
-                
                 $operation['ejecution'] = true;
                 $operation['result'] = true;
                 $operation['message'] = "Se cargo correctamente la información";
@@ -96,6 +95,28 @@
                 echo json_encode($operation);
 
             }
+
+        }
+
+        if($get->instanciar){
+
+            $gbd = new Conexion();
+
+            $cuenta_auxiliar = new PUCCuentaAuxiliar(base64_decode($get->id), $gbd);
+            $cuenta_auxiliar->cargarSubcuenta($gbd);
+            $subcuenta =  $cuenta_auxiliar->getSubcuenta();
+            $subcuenta->cargarCuenta($gbd);
+            $cuenta =  $subcuenta->getCuenta();
+            $cuenta->cargarGrupo($gbd);
+            $grupo = $cuenta->getGrupo();
+            $grupo->cargarClase($gbd);
+
+            $_SESSION['cuenta_auxiliar'] = serialize($cuenta_auxiliar);
+
+            $operation['ejecution'] = true;
+            $operation['result'] = true;
+
+            echo json_encode($operation);
 
         }
 

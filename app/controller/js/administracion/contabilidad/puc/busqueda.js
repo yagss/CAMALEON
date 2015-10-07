@@ -1,83 +1,95 @@
 // JavaScript Document
 
-(function($){
-    
-    $.fn.rowdespl = function(parameters){
-    
-        this.each(function(){
-        
-            var parameter = $.extend({
-                
-                object: $(this)
-                
-            }, parameters);
-            
-            var desplegar = function(){
-                
-                var data = [{'name':'Disponible'},{'name':'Caja'}];
-            
-                var listItems = $.map(data, function(item, index){
-                
-                    var tbody = $('<tbody></tbody>');
-                    tbody.addClass('contentrow');
-                    tbody.append('<tr></tr>');
-                    tbody.find('tr').append('<td></td>');
-                    tbody.find('td').addClass('celd');
-                    tbody.find('td').append(item.name);
-
-                    tbody.rowdespl();
-                    
-                    return tbody;
-                
-                }); 
-                
-                parameter.object.append(listItems);
-                
-            
-            }; 
-            
-            parameter.object.find(".celd").on("click", desplegar);
-        
-        });
-        
-    }
-    
-}(jQuery));
-
 $(document).ready(function(){
-    /*$(".despl").click(function(){
-        var activo= '<tbody><tbody><tr><td class="despl disponible">Disponible</td></tr></tbody><tr><td class="grupos">Inversiones</td></tr><tr><td class="grupos">Deudores</td></tr><tr><td class="grupos">Inventarios</td></tr></tbody><script>$(".despl").click(function()<script/>';
-        var disponible= '<tr><td class="cuentas">Caja</td></tr><tr><td class="cuentas">bancos</td></tr><tr><td class="cuentas">Remesas de tránsito</td></tr><tr><td class="cuentas">Cuentas de ahorro</td></tr>';
-        if($(this).hasClass('activo')){
-            $(this).parent().parent().append(activo);
-        }else if ($(this).hasClass('disponible')){
-            $(this).parent().parent().append(disponible);
+    
+    menu("hide");
+    
+    $(".fieldbox.textbox").animateTextbox();
+    
+    $(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
+    
+     var beforeSend = function(){
+        
+        $(".cover").addClass("show");
+        
+    };
+    
+    var complete = function(){
+        
+        $(".cover").removeClass("show");
+        
+    };
+    
+     var reload_cntaux = function(result, msg){
+
+        if(result){
+            
+            $('.resultbox').empty();            
+            $("#contenedor").trigger("load", {url: '/app/view/html/administracion/contabilidad/puc/cuenta_auxiliar/view.html', name: 'View Cuenta Auxiliar'});
+
         }
-        if ($(this).find("span").hasClass("icon-plus")){
-            $(this).find("span").removeClass("icon-plus");
-            $(this).find("span").addClass("icon-minus");
-        }else if ($(this).find("span").hasClass("icon-minus")){
-            $(this).find("span").removeClass("icon-minus");
-            $(this).find("span").addClass("icon-plus");}
-    });
+
+    };
+
+    var reload_scnt = function(result, msg){
+
+        if(result){
+
+            $('.resultbox').empty();
+            $("#contenedor").trigger("load", {url: '/app/view/html/administracion/contabilidad/puc/subcuenta/view.html', name: 'View Subcuenta'}); 
+
+        }
+
+    };
     
-    
-      $(".despl").click(function(){
-        var pasivo= '<tbody><tbody><tr><td class="despl obligaciones">Obligaciones financieras</td></tr></tbody><tr><td class="grupos">Proveedores</td></tr><tr><td class="grupos">Cuentas por pagar</td></tr><tr><td class="grupos">Impuestos, gravámenes y tasas</td></tr></tbody>';
-        var obligaciones= '<tr><td class="cuentas">Bancos nacionales</td></tr><tr><td class="cuentas">Bancos del exterior</td></tr><tr><td class="cuentas">Corporaciones financieras</td></tr><tr><td class="cuentas">Compañias de financiamiento comercial </td></tr>';
-        if($(this).hasClass('pasivo')){
-            $(this).parent().parent().append(pasivo);
-        }else if ($(this).hasClass('obligaciones')){
-            $(this).parent().parent().append(obligaciones);
+    var disposal = function(item){
+        
+        var rbx_aa = $('<div class="resultbox_aa"></div>');
+        var rbx_aaa = $('<div class="resultbox_aaa"></div>');
+        if(item.subentity){rbx_aaa.append('<span class="icon icon-plus"></span>');}
+        if(!(item.nativa)){
+            if(item.tipo === "subcuenta"){
+                var form = $('<form method="post" action="/app/controller/php/administracion/contabilidad/subcuenta.php"></form>');
+                form.sendForm({operation:reload_scnt, beforeSend: beforeSend, complete: complete});
+            }else if(item.tipo === "cuenta_auxiliar"){
+                var form = $('<form method="post" action="/app/controller/php/administracion/contabilidad/cuenta_auxiliar.php"></form>');
+                form.sendForm({operation:reload_cntaux, beforeSend: beforeSend, complete: complete});
+            }
+            form.append('<input type="hidden" name="instanciar" value="true">');
+            form.append('<input type="hidden" name="id" value="' + item.id + '">');
+            form.append('<span class="id"> ' + item.id + '</span>');
+            form.append('<span class="name"> ' + item.nombre + '</span>');
+            form.find(".name").on("click", function(){
+                form.submit();
+            });
+            rbx_aaa.append(form);
+            rbx_aa.append(rbx_aaa);
+        }else if(item.nativa){
+            rbx_aaa.append('<span class="id"> ' + item.id + '</span>');
+            rbx_aaa.append('<span class="name"> ' + item.nombre + '</span>');
+            rbx_aa.append(rbx_aaa);
+            rbx_aa.append('<div class="descripcion"></div>')
+            rbx_aa.find(".descripcion").append('<p>' + item.descripcion + '</p>');
+            rbx_aa.find(".descripcion").description({content: $(".contentDescrip")});
         }
         
-    });*/
+        return rbx_aa;
+        
+    };
     
-    $('.contentrow').rowdespl();
+    var parameters = {
+        shot: $("#puc").find("button"), 
+        url:"/app/controller/php/administracion/contabilidad/puc.php", 
+        disposal: disposal, 
+        beforeSend: beforeSend, 
+        complete: complete
+    };
     
-    $('.celd').click(function(){
-        $('.descripcion').fadeToggle(100);
-    });
+    var rbx= $('<div class="resultbox_a" data-entity="clase"></div>');
+    rbx.rowdespl(parameters);
+    
+    $('.resultbox').append(rbx);
+    
+    setTimeout(function(){$('.resultbox_a').trigger("slide");}, 0);
        
 });
-

@@ -1,47 +1,64 @@
 <link rel="stylesheet" type="text/css" href="/app/view/css/administracion/contabilidad/puc/busqueda.css">
-<script src="/app/controller/js/administracion/contabilidad/puc/cuenta_auxiliar/form.js"></script>
 <script src="/app/controller/js/administracion/contabilidad/puc/busqueda.js"></script>
 
-<form action="#" class="form busqueda">
-     
-     <div class="fieldbox textbox width_5">
-         <label>Búsqueda</label>
-         <input class="field" type="search"/>
+<div class="box">
+    
+    <div class="contenido">
+        
+        <div class="subcontenido puc">
+            
+            <!--<form class="form" id="puc" method="post" action="/app/controller/php/administracion/contabilidad/puc.php">
+                    
+                <div class="subform">
+
+                    <div class="fieldbox textbox width_5">
+                        <label>BÚSQUEDA CUENTA</label>
+                        <input class="field" type="search" name="parametro"/>
+                    </div>
+
+                    <span class="icon-search"></span>
+                    <button></button>
+
+                </div>
+
+            </form><br>-->
+            
+            <div class="result">
+                
+                <div class="resultbox">
+                    <!--<div class="resultbox_a" data-entity="clase">
+                        <div class="resultbox_aa">
+                            <div class="resultbox_aaa">
+                                <span class="icon-plus"></span>
+                                <span class="name">ACTIVO</span>
+                                <span class="id">1</span>
+                            </div>
+                            <div class="resultbox_a">
+                                <div class="resultBox_aa">
+                                    <div class="resultbox_aaa">
+                                        <span class="icon-plus"></span>
+                                        <span class="id">11</span>
+                                        <span class="name">DISPONIBLE</span>
+                                    </div>
+                                    <div class="resultbox_a"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                
+            </div>
+            
+            <button class="btnCloseContent"><span class="icon-cross"></span></button>
+            
         </div>
-</form>
-
-<div class="wrapper">
-    <table>
-        <tbody>
-            
-            <tbody class="contentrow">
-                <tr>
-                    <th class="despl activo celd"><span class="icon-plus"></span> Activo</th>
-                      <div class="descripcion">
-    <p>El activo: Agrupa el conjunto de las cuentas que representan los bienes y derechos tangibles e intangibles de propiedad del ente económico. </p>
-</div>
-                </tr>
-            </tbody>
-            
-            
-        </tbody>
-    </table>
-
-    <table id="tabla_2">
-        <tbody>
-            
-            <tbody>
-                <tr>
-                    <th class="despl pasivo celd"><span class="icon-plus"></span> Pasivo</th>
-                </tr>
-            </tbody>
-            
-            
-        </tbody>
-    </table>
-  
+        
+    </div>
+    
 </div>
 
-   
+<div class="contentDescrip"></div>
 
-
+<div class="box menu">
+    <div class="menu"></div>
+</div>

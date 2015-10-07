@@ -60,6 +60,7 @@
                                     <li class="submenu"><a href="#"><span class="icon-arrow-right2"></span> PUC</a>
                                         <ul class="children inte" >
                                             <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/cuenta_auxiliar/form.html" data-name="Form Cuenta Auxiliar">Agregar cuenta auxiliar</a></li>
+                                            <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/subcuenta/form.html" data-name="Form Subcuenta">Agregar subcuenta</a></li>
                                             <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/busqueda.html" data-name="Busqueda PUC">Buscar cuenta</a></li>
                                         </ul>
                                     </li>

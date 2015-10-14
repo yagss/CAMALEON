@@ -2,8 +2,8 @@
 
 $(document).ready(function(){
 
-    $('.submenu').children('a').click(function(){
-        $(this).parent().children('.children').slideToggle();
+    $('.submenu.a').children('a').click(function(){
+        $(this).parent().children('nav').slideToggle();
         
         if($(this).find("span").hasClass("icon-circle-right")){
             $(this).find("span").removeClass("icon-circle-right");
@@ -12,8 +12,7 @@ $(document).ready(function(){
             $(this).find("span").removeClass("icon-circle-down");
             $(this).find("span").addClass("icon-circle-right");
         }
-        
-         if($(this).find("span").hasClass("icon-arrow-right2")){
+        if($(this).find("span").hasClass("icon-arrow-right2")){
             $(this).find("span").removeClass("icon-arrow-right2");
             $(this).find("span").addClass("icon-arrow-down-right2");
         }else if($(this).find("span").hasClass("icon-arrow-down-right2")){
@@ -34,6 +33,16 @@ $(document).ready(function(){
         $("#session").trigger("logout", action);
         
     });
-
+     
+    $('.submenu.b').children('a').click(function(){
+        $(this).parent().children('div').addClass('open');
+        $(".menu").trigger("btnMenuHide");
+    });
+    
+    $('.submenu.b').find('.volver').click(function(){
+        $(this).parent().parent().removeClass('open');
+        $(".menu").trigger("btnMenuShow");
+    });
+    
 });
 

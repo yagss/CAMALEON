@@ -1,19 +1,19 @@
 #subbody #contenedor .box .menu{
     margin: auto;
-    height: 50%;
-
 }
+
+/* inf. usuario */
 
 #subbody #contenedor .box .menu .user-name{
     width: 300px;
     top:3%;
     right: 1%;
     position: absolute;
-    text-align: right;
-/*    background: #e3d745;*/    
+    text-align: right;   
 }
 
-#subbody #contenedor .box .menu .user-name p, #subbody #contenedor .box .menu .user-name a{
+#subbody #contenedor .box .menu .user-name p, 
+#subbody #contenedor .box .menu .user-name a{
     font-family: Aldo-SemiBold;
     color: #FFF;
     font-size: 1.2em;
@@ -28,69 +28,104 @@
     color:  cadetblue;  
 }
 
-#subbody #contenedor .box .menu nav .navegacion{
-    width: 70%;
-    margin: auto;
+/* menu navegacion */
+
+nav{
+    list-style: none;
+    text-align: center;
 }
 
-#subbody #contenedor .box .menu nav a {
-    text-decoration: none;
+/* titulos */
+
+nav lh.title{
     font-family: gothic;
-    font-size: 1em;
-    color: #fff;
-    text-align: left;
-    display: block;
-    margin-top: 10px;
-}
-
-#subbody #contenedor .box .menu nav a span {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#subbody #contenedor .box .menu nav a:hover span {
-    color: cadetblue;
-}
-
-#subbody #contenedor .box .menu nav .icon-circle-down{
-     color: cadetblue;
-}
-#subbody #contenedor .box .menu nav .icon-arrow-right2, #subbody #contenedor .box .menu nav .icon-arrow-down-right2{
-    font-size: 0.7em;
-}
-#subbody #contenedor .box .menu nav  .children li a:hover {
-    color: cadetblue;
-}
-
-#subbody #contenedor .box .menu h1 span{
-    font-size: 1em;
-    
-}
-
-#subbody #contenedor .box .menu a span{
-    font-size: 1.1em;
-}
-
-#subbody #contenedor .box .menu h1{
-   text-decoration: underline;
-    text-decoration: overline;
-    font-family: gothic;
-    font-size: 1.5em;
     color: #528688;
     text-align: center;
     margin: 8px;
     padding: 11px;
+    display: block;
 }
 
-#subbody #contenedor .box .menu ul{
-    list-style: none;   
-    margin-left: 5%;
+nav lh.title.a{
+    text-decoration: overline;
+    font-size: 1.5em;
 }
 
-#subbody #contenedor .box .menu .submenu .children{
-    display: none;
+nav lh.title.a span{
+    font-size: 1em;
 }
 
-#subbody #contenedor .box .menu nav ul li ul .children.inte{
+nav lh.title.b{
+    font-size: 1.2em;
+}
+
+/* items lista */
+
+nav li a{
+    text-decoration: none;
+    font-family: gothic;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+nav li.submenu.a a{
+    text-align: left;
     margin-left: 10%;
+}
+
+/* hover iconos items */
+
+nav li a span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav li a:hover span,
+nav li.submenu.a li.submenu.a nav a:hover,
+nav li.submenu.b nav a:hover
+{
+    color: cadetblue;
+}
+
+/* submenus */
+
+nav li.submenu.a nav{
+    display: none;
+    margin-left: 15px;
+}
+
+nav li.submenu.b div{
+    position: absolute;
+    top: -100%;bottom: 100%;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    background-color: rgba(38, 50, 56, 0.9);
+    -webkit-transition:all 1s;
+    transition:all 1s;
+}
+
+nav li.submenu.b div.open{
+    top: 0%;bottom: 0%;
+}
+
+nav li.submenu.b div nav{
+    margin:auto;
+}
+
+nav li.submenu.b .volver{
+    text-decoration: underline;
+    font-family: gothic;
+    font-size: 1em;
+    color: #528688;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+nav li.submenu.b .volver:hover{
+    color: #64a7aa;
 }

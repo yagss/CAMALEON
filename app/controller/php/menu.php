@@ -55,33 +55,6 @@
             ?>
 
             <nav>
-<<<<<<< HEAD
-                
-                <h1><span class="icon-earth"></span> MODULO ADMINISTRATIVO</h1>
-                
-                    <div class="navegacion">
-                        <ul>
-                            <!--<li class="submenu"><a href="#"><span class="icon-circle-right"></span> USUARIO </a>
-                                <ul class="children">
-                                    <li><a href="#">Agregar Usuario</a></li>
-                                    <li><a href="#">Buscar Usuario</a></li>
-                                </ul>
-                            </li>-->
-                            <li class="submenu"><a href="#"><span class="icon-circle-right"></span> DATOS Y VARIABLES </a>
-                                <ul  class="children">
-                                    <li class="submenu"><a href="#"><span class="icon-arrow-right2"></span> PUC</a>
-                                        <ul class="children inte" >
-                                            <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/cuenta_auxiliar/form.html" data-name="Form Cuenta Auxiliar">Agregar cuenta auxiliar</a></li>
-                                            <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/subcuenta/form.html" data-name="Form Subcuenta">Agregar subcuenta</a></li>
-                                            <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/busqueda.html" data-name="Busqueda PUC">Buscar cuenta</a></li>
-                                        </ul>
-                                    </li>
-                                    <!--<li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>-->
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-=======
                 <lh class="title a"><span class="icon-home2"></span> MÓDULO ADMINISTRATIVO</lh>
                 <li class="submenu a"><a href="#"><span class="icon-circle-right"></span> DATOS Y VARIABLES </a>
                     <nav>
@@ -94,7 +67,6 @@
                         <!--<li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>-->
                     </nav>
                 </li>
->>>>>>> Clara
             </nav>
 
             <?php

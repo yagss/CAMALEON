@@ -91,8 +91,8 @@
             var msg = function(){
                 
                 var element = $('<div class="notification msg"></div>');
-                element.append('<div class="close"><span class="icon-cross"></span></div>');
-                element.append('<div class="icon"><span class="' + data.subtype + ' ' + data.icon + '"></span></div>');
+                element.append('<div class="close"><i class="icon-cerrar"></i></div>');
+                element.append('<div class="icon"><i class="' + data.subtype + ' ' + data.icon + '"></i></div>');
                 element.append('<div class="message">' + data.message + '</div>');
                 
                 element.notification({timeout: 8000});
@@ -106,8 +106,8 @@
                 parameter.container.addClass("widescreen");
                 
                 var element = $('<div class="notification confirm"></div>');
-                element.append('<div class="close"><span class="icon-cross"></span></div>');
-                element.append('<div class="icon"><span class="' + data.subtype + ' ' + data.icon + '"></span></div>');
+                element.append('<div class="close"><i class="icon-cerrar"></i></div>');
+                element.append('<div class="icon"><i class="' + data.subtype + ' ' + data.icon + '"></i></div>');
                 element.append('<div class="message">' + data.message + '</div>');
                 element.append('<div class="btns"></div>');
                 element.find(".btns").append('<button id="acept">ACEPTAR</button>');

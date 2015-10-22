@@ -51,7 +51,7 @@ nav lh.title.a{
     font-size: 1.5em;
 }
 
-nav lh.title.a span{
+nav lh.title.a i{
     font-size: 1em;
 }
 
@@ -78,12 +78,12 @@ nav li.submenu.a a{
 
 /* hover iconos items */
 
-nav li a span {
+nav li a i {
     display: inline-block;
     vertical-align: middle;
 }
 
-nav li a:hover span,
+nav li a:hover i,
 nav li.submenu.a li.submenu.a nav a:hover,
 nav li.submenu.b nav a:hover
 {

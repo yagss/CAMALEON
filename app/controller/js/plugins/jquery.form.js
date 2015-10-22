@@ -30,7 +30,7 @@
                         if(result.ejecution==false){
                             
                             console.error("Ejecution Error - " + result.error);
-                            alert("error", "icon-cross", "Error de ejecución.");
+                            alert("error", "icon-cerrar", "Error de ejecución.");
                             
                         }else if(result.ejecution==true){
                             
@@ -42,7 +42,7 @@
                     error: function(request, errorType, errorMessage){
                         
                         console.error('Error: ' + errorType + '\nMessage: ' + errorMessage);
-                        alert("error", "icon-cross", "Error.");
+                        alert("error", "icon-cerrar", "Error.");
                         
                     },
                     timeout: parameter.timeout,

@@ -54,14 +54,14 @@
     display: flex;
 }
 
-#subbody header .subheader.btn span{
+#subbody header .subheader.btn i{
     margin-top: auto; margin-bottom:auto;
     margin-right: 20px;
-    font-size: 2em; color: #fff;
+    font-size: 2.8em; color: #fff;
     cursor: pointer;
 }
 
-#subbody header .subheader.btn .icon-user{
+#subbody header .subheader.btn .icon-usuario_activo{
     cursor: default;
 }
 
@@ -124,8 +124,8 @@
     margin: 5px;
 }
 
-#subbody #contenedor .box .contenido .btnCloseContent span{
-    font-size: 0.8em;
+#subbody #contenedor .box .contenido .btnCloseContent i{
+    font-size: 1.2em;
 }
 
 #subbody #contenedor .box .contenido .btnCloseContent:hover {
@@ -150,19 +150,19 @@
     left:0;bottom:0; 
 }
 
-#subbody footer:hover span{color: #00b0d9;}
+#subbody footer:hover i{color: #00b0d9;}
 
-#subbody footer span{
+#subbody footer i{
     text-align: center;
     width: 100%;
     top: 2.5px;
 }
 
-#subbody footer .icon-ctrl{
+#subbody footer .icon-flecha_arriba{
     display: block;
     margin: auto;
     height: 30px;
-    font-size: 3em;
+    font-size: 2em;
     color: #fff;
 }
 

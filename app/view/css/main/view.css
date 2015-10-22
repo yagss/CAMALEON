@@ -39,12 +39,12 @@
     text-decoration: none;
 }
 
-.view .bar a span{
-    font-size: 1.5em;
+.view .bar a i{
+    font-size: 3em;
     color: #757575;
 }
 
-.view .bar a span:hover{
+.view .bar a i:hover{
     color: #006C00;
 }
 

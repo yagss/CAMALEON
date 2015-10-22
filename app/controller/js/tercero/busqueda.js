@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	autosize($(".fieldbox.textbox").find("field"));
 
-	$("btnCloseContent").btnCloseContent({content:$("contenedor")});
+	$(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
 
 	$('.natural').fadeIn();
     $('.juridica').fadeIn();
@@ -29,7 +29,7 @@ $(document).ready(function(){
         {
             if (msg != "") 
             {
-                alert("info","icon-checkmark",msg);
+                alert("info","icon-confirmar",msg);
                 $("#contenedor").trigger("load", {url: '/app/view/html/tercero/view.html', name: 'View Tercero'});
             }
         }
@@ -37,7 +37,7 @@ $(document).ready(function(){
         {
             if(msg != "")
             {
-                alert("error","icon-cross",msg);
+                alert("error","icon-cerrar",msg);
             }
         }
     };
@@ -55,7 +55,7 @@ $(document).ready(function(){
                 frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
                 var subform = $('<div class="subform"></div>');
                 subform.append('<div class="espacio left"><h2>' + item.razon_social + '</h2><p>' + item.nit + '</p></div>');
-                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.nit + '\');"><span class="icon-eye"></span></a></div>');
+                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.nit + '\');"><i class="icon-ver"></i></a></div>');
                 frm.append(subform);
     		}
     		else if(item.hasOwnProperty('numdoc'))
@@ -66,7 +66,7 @@ $(document).ready(function(){
                 frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
                 var subform = $('<div class="subform"></div>');
                 subform.append('<div class="espacio left"><h2>' + item.nombre + ' ' + item.apellido + '</h2><p>' + item.numdoc + '</p></div>');
-                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.numdoc + '\');"><span class="icon-eye"></span></a></div>');
+                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.numdoc + '\');"><i class="icon-ver"></i></a></div>');
                 frm.append(subform);
     		}
             $('#tercero_registros').append(frm);

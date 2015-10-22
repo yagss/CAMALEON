@@ -58,7 +58,7 @@ $(document).ready(function(){
             
             if(msg != ""){
                 
-                alert("info","icon-checkmark",msg);
+                alert("info","icon-confirmar",msg);
                 
                 $("#contenedor").trigger("close");
                 
@@ -68,7 +68,7 @@ $(document).ready(function(){
         
             if(msg != ""){
                 
-                alert("error","icon-cross",msg);
+                alert("error","icon-cerrar",msg);
                 
             }
             

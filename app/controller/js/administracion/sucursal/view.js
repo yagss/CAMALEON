@@ -14,9 +14,6 @@ $(document).ready(function(){
     $(".fieldbox.select").animateSelect();
 
     autosize($(".fieldbox.textbox").find("field"));
-   
-    $("btnCloseContent").btnCloseContent({content:$("contenedor")});
-
 
     $(".link").link({container: $("#contenedor")});
 

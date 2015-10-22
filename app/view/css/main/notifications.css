@@ -27,14 +27,14 @@
     text-align: right;
 }
 
-.notification .close span{
+.notification .close i{
     padding-right: 5px;
-    font-size: .6em;
+    font-size: 1em;
     color: #9E9E9E;
     cursor: pointer;
 }
 
-.notification .close span:hover{
+.notification .close i:hover{
     color: #FAFAFA;
 }
 
@@ -44,19 +44,19 @@
     padding: 10px;
 }
 
-.notification .icon span{
+.notification .icon i{
     font-size: 2em;
 }
 
-.notification .icon span.info{
+.notification .icon i.info{
     color: #2196F3;
 }
 
-.notification .icon span.error{
+.notification .icon i.error{
     color: #F44336;
 }
 
-.notification .icon span.warn{
+.notification .icon i.warn{
     color: #FFC107;
 }
 
@@ -105,11 +105,11 @@
     margin: auto;
 }
 
-.notification.confirm .close span{
+.notification.confirm .close i{
     color: #9E9E9E;
 }
 
-.notification.confirm .close span:hover{
+.notification.confirm .close i:hover{
     color: #FAFAFA;
 }
 

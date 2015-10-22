@@ -17,7 +17,7 @@ $(document).ready(function(){
             
             if(msg != ""){
                 
-                alert("info","icon-checkmark",msg);
+                alert("info","icon-confirmar",msg);
                 
                 $("#contenedor").trigger("load", {url: '/app/view/html/administracion/contabilidad/puc/cuenta_auxiliar/view.html', name: 'View Cuenta Auxiliar'});
                 
@@ -27,7 +27,7 @@ $(document).ready(function(){
         
             if(msg != ""){
                 
-                alert("error","icon-cross",msg);
+                alert("error","icon-cerrar",msg);
                 
             }
             

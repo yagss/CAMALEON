@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	autosize($(".fieldbox.textbox").find("field"));
 
-	$("btnCloseContent").btnCloseContent({content:$("contenedor")});
+	$(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
 
     var beforeSend = function(){
         
@@ -25,7 +25,7 @@ $(document).ready(function(){
         {
             if (msg != "") 
             {
-                alert("info","icon-checkmark",msg);
+                alert("info","icon-confirmar",msg);
                 $("#contenedor").trigger("load", {url: '/app/view/html/administracion/sucursal/view.html', name: 'View Sucursal'});
             }
         }
@@ -33,7 +33,7 @@ $(document).ready(function(){
         {
             if(msg != "")
             {
-                alert("error","icon-cross",msg);
+                alert("error","icon-cerrar",msg);
             }
         }
     };
@@ -41,7 +41,7 @@ $(document).ready(function(){
     var load = function(result, message){
     	var html = '';
     	$.each(result, function(i, item){
-            html +='<form class="form buscador" method="post" action="/app/controller/php/administracion/sucursal/sucursal.php" id="formulario' + item.id + '"><div class="subform"><input type="hidden" name="instanciar" value="true"/><input type="hidden" name="id_sucursal" value="'+ item.id +'"/><div class="espacio left"><h2>' + item.nombre + '</h2><p>' + item.ciudad_nombre + '</p></div><div class="espacio right"><a class="link" href="javascript:$().ver(\'#formulario'+ item.id +'\');"><span class="icon-eye"></span></a></div></div></form><br>';
+            html +='<form class="form buscador" method="post" action="/app/controller/php/administracion/sucursal/sucursal.php" id="formulario' + item.id + '"><div class="subform"><input type="hidden" name="instanciar" value="true"/><input type="hidden" name="id_sucursal" value="'+ item.id +'"/><div class="espacio left"><h2>' + item.nombre + '</h2><p>' + item.ciudad_nombre + '</p></div><div class="espacio right"><a class="link" href="javascript:$().ver(\'#formulario'+ item.id +'\');"><i class="icon-ver"></i></a></div></div></form><br>';
     	});
 		$('#sucursales').html(html);
     }

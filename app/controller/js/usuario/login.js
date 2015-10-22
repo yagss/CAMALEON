@@ -4,7 +4,7 @@ $(document).ready(function(){
 
     $(".fieldbox").animateTextbox();
     
-    $(".icon-enter").click(function(){
+    $("#session").click(function(){
         $("#login").fadeToggle('slow','swing');
     });
     
@@ -20,7 +20,7 @@ $(document).ready(function(){
             
         }else{
             
-            alert("error","icon-cross",msg);
+            alert("error","icon-cerrar",msg);
             
         }
         

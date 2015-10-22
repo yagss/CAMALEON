@@ -1,0 +1,73 @@
+@font-face {
+	font-family: 'camaleon';
+	src:url('fonts/camaleon.eot?ht3ebf');
+	src:url('fonts/camaleon.eot?#iefixht3ebf') format('embedded-opentype'),
+		url('fonts/camaleon.ttf?ht3ebf') format('truetype'),
+		url('fonts/camaleon.woff?ht3ebf') format('woff'),
+		url('fonts/camaleon.svg?ht3ebf#camaleon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+i {
+	font-family: 'camaleon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-eliminar:before {
+	content: "\e601";
+}
+.icon-crear:before {
+	content: "\e602";
+}
+.icon-editar:before {
+	content: "\e603";
+}
+.icon-guardar:before {
+	content: "\e604";
+}
+.icon-enviar:before {
+	content: "\e600";
+}
+.icon-buscar:before {
+	content: "\e605";
+}
+.icon-cerrar:before {
+	content: "\e606";
+}
+.icon-confirmar:before {
+	content: "\e608";
+}
+.icon-flecha_abajo:before {
+	content: "\e609";
+}
+.icon-global:before {
+	content: "\e60a";
+}
+.icon-home:before {
+	content: "\e60b";
+}
+.icon-login:before {
+	content: "\e60c";
+}
+.icon-usuario_activo:before {
+	content: "\e60d";
+}
+.icon-menu:before {
+	content: "\e60e";
+}
+.icon-flecha_arriba:before {
+	content: "\e60f";
+}
+.icon-ver:before {
+	content: "\e610";
+}

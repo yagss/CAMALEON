@@ -25,16 +25,16 @@
             
             ?>
                 <nav>
-                    <lh class="title a"><span class="icon-home2"></span> INICIO</lh>
-                    <li><a class="link" href="#" data-url="/app/view/html/administracion/inicio.html" data-name="Administrativo"><span class="icon-earth"></span> Modulo Administrativo</a></li>
+                    <lh class="title a"><i class="icon-home"></i> INICIO</lh>
+                    <li><a class="link" href="#" data-url="/app/view/html/administracion/inicio.html" data-name="Administrativo"><span class="icon-earth"></span> MODULO ADMINISTRATIVO</a></li>
                     <lh class="title b"> ACCESOS</lh>
                     <li class="submenu b">
-                        <a href="#"><span class="icon-spinner10"></span> Terceros</a>
+                        <a href="#"><span class="icon-spinner10"></span> TERCERO</a>
                         <div class="submenu float">
                             <nav>
-                                <lh class="title a"><span class="icon-home2"></span> Terceros</lh>
-                                <li><a href="#">Agregar</a></li>
-                                <li><a href="#">Buscar</a></li>
+                                <lh class="title a"><span class="icon-home2"></span> TERCERO</lh>
+                                <li><a class="link" href="#" data-url="/app/view/html/tercero/form.html" data-name="Form Sucursal">Agregar</a></li>
+                                <li><a class="link" href="#" data-url="/app/view/html/tercero/busqueda.html" data-name="Busqueda Sucursal">Buscar</a></li>
                                 <li class="volver">VOLVER</li>
                             </nav>
                         </div>
@@ -55,8 +55,8 @@
             ?>
 
             <nav>
-                <lh class="title a"><span class="icon-home2"></span> MÓDULO ADMINISTRATIVO</lh>
-                <li class="submenu a"><a href="#"><span class="icon-circle-right"></span> DATOS Y VARIABLES </a>
+                <lh class="title a"><i class="icon-global"></i> MÓDULO ADMINISTRATIVO</lh>
+                <li class="submenu a"><a href="#"><i class="icon-circle-right"></i> DATOS Y VARIABLES </a>
                     <nav>
                         <li class="submenu a"><a href="#"><span class="icon-arrow-right2"></span> PUC</a>
                             <nav>
@@ -65,6 +65,13 @@
                             </nav>
                         </li>
                         <!--<li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>-->
+                    </nav>
+                </li>
+                <li class="submenu a"><a href="#"><i class="icon-circle-right"></i> SUCURSAL </a>
+                        <nav>
+                            <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/form.html" data-name="Form Cuenta Auxiliar">Agregar sucursal</a></li>
+                            <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/busqueda.html" data-name="Busqueda PUC">Buscar sucursal</a></li>
+                        </nav>
                     </nav>
                 </li>
             </nav>

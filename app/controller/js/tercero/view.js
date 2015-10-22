@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     autosize($(".fieldbox.textbox").find("field"));
 
-    $("btnCloseContent").btnCloseContent({content:$("contenedor")});
+    $(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
     
     $(".link").link({container: $("#contenedor")});
     

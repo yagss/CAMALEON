@@ -15,8 +15,6 @@ $(document).ready(function(){
 
     autosize($(".fieldbox.textbox").find("field"));
 
-    $("btnCloseContent").btnCloseContent({content:$("contenedor")});
-
     $(".link").link({container: $("#contenedor")});
     
     $(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
@@ -77,7 +75,7 @@ $(document).ready(function(){
         {
             if (msg != "") 
             {
-                alert("info","icon-checkmark",msg);
+                alert("info","icon-confirmar",msg);
                 $("#contenedor").trigger("load", {url: '/app/view/html/administracion/sucursal/view.html', name: 'View sucursal'});
             }
         }
@@ -85,7 +83,7 @@ $(document).ready(function(){
         {
             if(msg != "")
             {
-                alert("error","icon-cross",msg);
+                alert("error","icon-cerrar",msg);
             }
         }
     }

@@ -24,20 +24,20 @@
             
             var sessionShow = function(){
             
-                parameter.object.addClass('icon-user');
+                parameter.object.addClass('icon-usuario_activo');
                 
             };
             
             var sessionHide = function(){
             
-                parameter.object.addClass('icon-enter');
+                parameter.object.addClass('icon-login');
                 
             };
             
             var loadingShow = function(){
                 
-                parameter.object.removeClass('icon-user');
-                parameter.object.removeClass('icon-enter');
+                parameter.object.removeClass('icon-usuario_activo');
+                parameter.object.removeClass('icon-login');
             
                 parameter.object.addClass('icon-spinner9');
                 
@@ -158,7 +158,7 @@
                     if(result.ejecution==true){
 
                         console.info("Ejecution Logout Ok!");
-                        alert("info", "icon-checkmark", "Sesión de usuario terminada.");
+                        alert("info", "icon-confirmar", "Sesión de usuario terminada.");
                         sessionHide();
                         
                         if(action!=null){action()}
@@ -169,7 +169,7 @@
                     }else if(result.ejecution==false){
 
                         console.error("Ejecution Logout Error - " + result.error);
-                        alert("error", "icon-cross", "Error en la ejecución de cierre de sesión.");
+                        alert("error", "icon-cerrar", "Error en la ejecución de cierre de sesión.");
                         
                     }
                     

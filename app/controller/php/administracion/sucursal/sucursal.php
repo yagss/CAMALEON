@@ -118,15 +118,26 @@
 
 		if ($get->buscar) {
 
-			$get->subcuenta = strtoupper(base64_decode($get->subcuenta));
-
 			$conexion=new Conexion();
-			$sucursal=new Sucursal();
 
-			$operation = $sucursal->buscar($get->subcuenta, $conexion);
-			if (($operation['ejecution']) && ($operation['result'])) {
-				$operation['message'] = "La informacion se cargo exitosamente.";
+			$get->parametro = strtoupper(base64_decode($get->parametro));
+
+			$operation = Sucursal::buscar($get->parametro, $conexion);
+
+			if($operation['result']){
+				if(count($operation['result'])==1)
+	        	{
+		            $operation['message'] = "Se encontro ".count($operation['result'])." registro.";
+		        }
+		        elseif(count($operation['result'])>1)
+	        	{
+		            $operation['message'] = "Se encontraron ".count($operation['result'])." registros.";
+		        }
+			}else{
+				$operation['message'] = "No se encuentran registros con los parametros ingresados.";
 			}
+			
+
 			echo json_encode($operation);
 		}
 

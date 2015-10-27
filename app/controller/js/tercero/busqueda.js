@@ -1,15 +1,41 @@
 $(document).ready(function(){
 
 	$(".fieldbox.textbox").animateTextbox();
-	$(".fieldbox.select").animateSelect();
 
 	autosize($(".fieldbox.textbox").find("field"));
 
 	$(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
+    
+    $('.result').empty();
+    
+    $("#filtro").find(".placeholder").click(function(){
+        $("#filtro").find(".option").fadeToggle();
+    });
+    
+    $("#filtro").find(".option").fadeOut();
 
 	$('.natural').fadeIn();
     $('.juridica').fadeIn();
-    $("#std_todos").attr('checked', 'checked');
+    $("#opc_uno").attr('checked', 'checked');
+    
+    $('input[name=tipo]').click(function(){
+        if($(this).val() == 'natural'){
+            $('.juridica').fadeOut(function(){
+                $('.natural').fadeIn();
+            });
+
+        }
+        else if($(this).val() == 'juridica'){
+            $('.natural').fadeOut(function(){
+                $('.juridica').fadeIn();
+            });
+        }
+        else
+        {
+            $('.natural').fadeIn();
+            $('.juridica').fadeIn();
+        }
+    });
 
     var beforeSend = function(){
         
@@ -44,82 +70,52 @@ $(document).ready(function(){
 
     var load = function(result, message){
         
-    	$('#tercero_registros').empty();
-        
-    	$.each(result, function(i, item){
-    		if(item.hasOwnProperty('nit'))
-    		{
-                var frm = $('<form class="form buscador juridica" id="' + item.nit + '" method="post" action="/app/controller/php/tercero/tercero.php"></form>');
-                frm.append('<input name="instanciar" type="hidden" value="true"/>');
-                frm.append('<input type="hidden" name="nit" value="' + item.nit + '"/>');
-                frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
-                var subform = $('<div class="subform"></div>');
-                subform.append('<div class="espacio left"><h2>' + item.razon_social + '</h2><p>' + item.nit + '</p></div>');
-                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.nit + '\');"><i class="icon-ver"></i></a></div>');
-                frm.append(subform);
-    		}
-    		else if(item.hasOwnProperty('numdoc'))
-    		{
-                var frm = $('<form class="form buscador natural" id="' + item.numdoc + '" method="post" action="/app/controller/php/tercero/tercero.php"></form>');
-                frm.append('<input name="instanciar" type="hidden" value="true"/>');
-                frm.append('<input type="hidden" name="numero_documento" value="' + item.numdoc + '"/>');
-                frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
-                var subform = $('<div class="subform"></div>');
-                subform.append('<div class="espacio left"><h2>' + item.nombre + ' ' + item.apellido + '</h2><p>' + item.numdoc + '</p></div>');
-                subform.append('<div class="espacio right"><a class="link" href="javascript:$().ver(\'#' + item.numdoc + '\');"><i class="icon-ver"></i></a></div>');
-                frm.append(subform);
-    		}
-            $('#tercero_registros').append(frm);
-    	});
-        
-		
-    }
-
-    
-
-    $('input[name=tipo_b]').click(function(){
-        if($(this).val() == 'natural'){
-            $('.juridica').fadeOut(function(){
-                $('.natural').fadeIn();
-            });
-
-        }
-        else if($(this).val() == 'juridica'){
-            $('.natural').fadeOut(function(){
-                $('.juridica').fadeIn();
-            });
-        }
-        else
-        {
-            $('.natural').fadeIn();
-            $('.juridica').fadeIn();
-        }
-    });
-
-/*    $('input[name=subcuenta]').keypress(function(e){
-        if((e.which == 13)){
-            $('#buscar').click();
-            e.preventDefault();
-        }
+        if(result.length>0){
             
-    });*/
+            $('.result').empty();
+        
+            $.each(result, function(i, item){
+                if(item.hasOwnProperty('nit'))
+                {
+                    var frm = $('<form class="infobox tercero juridica" method="post" action="/app/controller/php/tercero/tercero.php"></form>');
+                    frm.append('<input name="instanciar" type="hidden" value="true"/>');
+                    frm.append('<input type="hidden" name="nit" value="' + item.nit + '"/>');
+                    frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
+                    var subform = $('<div class="subform"></div>');
+                    subform.append('<div class="espacio left"><h2>' + item.razon_social + '</h2><p>' + item.nit + '</p></div>');
+                    subform.append('<div class="espacio right"><a class="link" href="#"><i class="icon-ver"></i></a></div>');
+                    frm.append(subform);
+                }
+                else if(item.hasOwnProperty('numdoc'))
+                {
+                    var frm = $('<form class="infobox tercero natural" method="post" action="/app/controller/php/tercero/tercero.php"></form>');
+                    frm.append('<input name="instanciar" type="hidden" value="true"/>');
+                    frm.append('<input type="hidden" name="numero_documento" value="' + item.numdoc + '"/>');
+                    frm.append('<input type="hidden" name="tipo" value="' + item.tipo + '"/>');
+                    var subform = $('<div class="subform"></div>');
+                    subform.append('<div class="espacio left"><h2>' + item.nombre + ' ' + item.apellido + '</h2><p>' + item.numdoc + '</p></div>');
+                    subform.append('<div class="espacio right"><a class="link" href="#"><i class="icon-ver"></i></a></div>');
+                    frm.append(subform);
+                }
 
-    $.fn.ver = function(param) {
-        $(param).sendForm({operation:reload, beforeSend: beforeSend, complete: complete});
-        $(param).submit();
+                frm.sendForm({operation:reload, beforeSend: beforeSend, complete: complete});
+
+                frm.find(".link").click(function(){frm.submit();});
+
+                $('.result').append(frm);
+            });
+            
+            alert("info","icon-confirmar",message);
+            
+        }else{
+            
+            alert("error","icon-cerrar",message);
+            
+        }
+		
     };
 
-   	$(".filtrar").find("a").click(function(){
-        $(".option").slideToggle();
-    });
-
-    var ready = function() {
-        $("#busqueda_tercero").submit();
-    }
-
-    setTimeout(ready,0);
-
-    $("#busqueda_tercero").sendForm({operation:load, beforeSend: beforeSend, complete: complete});
+    $("#tercero").sendForm({operation:load, beforeSend: beforeSend, complete: complete});
 
 });  
     

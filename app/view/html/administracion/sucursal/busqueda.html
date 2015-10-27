@@ -1,48 +1,37 @@
-<link rel="stylesheet" type="text/css" href="/app/view/css/administracion/sucursal/busqueda.css">
+<link rel="stylesheet" type="text/css" href="/app/view/css/administracion/sucursal/sucursal.css">
 <script type="text/javascript" src="/app/controller/js/administracion/sucursal/busqueda.js"></script>
 
 <div class="box">
     <div class="contenido">
         
-        <div class="subcontenido">
+        <div class="subcontenido busqueda">
             
-            <div class="busqueda_general">
-                
+            <div class="busqueda_a">
+
                 <h1>Búsqueda Sucursal</h1> 
-                
+
                 <section class="left">
-                    
-                    <form class="form" id="busqueda_sucursal" method="post" action="/app/controller/php/administracion/sucursal/sucursal.php">
+
+                    <form class="form" id="sucursal" method="post" action="/app/controller/php/administracion/sucursal/sucursal.php">
 
                         <div class="subform">
-                           
-                           <div class="fieldbox textbox width_10">
-                                <label>Búsqueda</label>
-                                <input class="field" type="search" name="subcuenta"/>
-                                <input type="hidden" name="buscar" value="true"/>
-                           </div>
+                            
+                            <input type="hidden" name="buscar" value="true"/>
 
-                          <!--   <div class="filtrar">
-                              <a href="#">FILTRAR</a>
-                              <div class="option">
-                                  <input id="std_todos" class="radiobutton" type="radio" name="tipo_b" value="todos">
-                                  <label for="std_todos">NOMBRE SUCURSAL</label>
-                              </div>
-                              <div class="option">
-                                  <input id="std_natural" class="radiobutton" type="radio" name="tipo_b" value="natural">
-                                  <label for="std_natural">CUIDAD</label>
-                              </div>
-                          </div> -->
+                            <div class="fieldbox textbox width_10">
+                                <label>BÚSQUEDA</label>
+                                <input class="field" type="search" name="parametro"/>
+                            </div>
 
                             <button class="button">BUSCAR</button>
+                            
                         </div>
 
                     </form><br>
-                    
                 </section>
 
-                <section class="right" id="sucursales"></section>
-                
+                <section class="right result"></section>
+
             </div>
             
             <button class="btnCloseContent"><i class="icon-cerrar"></i></button>

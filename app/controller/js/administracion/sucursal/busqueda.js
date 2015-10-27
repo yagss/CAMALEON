@@ -1,11 +1,12 @@
 $(document).ready(function(){
 
 	$(".fieldbox.textbox").animateTextbox();
-	$(".fieldbox.select").animateSelect();
 
 	autosize($(".fieldbox.textbox").find("field"));
 
 	$(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
+    
+    $('.result').empty();
 
     var beforeSend = function(){
         
@@ -39,27 +40,38 @@ $(document).ready(function(){
     };
 
     var load = function(result, message){
-    	var html = '';
-    	$.each(result, function(i, item){
-            html +='<form class="form buscador" method="post" action="/app/controller/php/administracion/sucursal/sucursal.php" id="formulario' + item.id + '"><div class="subform"><input type="hidden" name="instanciar" value="true"/><input type="hidden" name="id_sucursal" value="'+ item.id +'"/><div class="espacio left"><h2>' + item.nombre + '</h2><p>' + item.ciudad_nombre + '</p></div><div class="espacio right"><a class="link" href="javascript:$().ver(\'#formulario'+ item.id +'\');"><i class="icon-ver"></i></a></div></div></form><br>';
-    	});
-		$('#sucursales').html(html);
-    }
+        
+        if(result.length>0){
+            
+            $('.result').empty();
+        
+            $.each(result, function(i, item){
 
-    $.fn.ver = function(param) {
-        $(param).sendForm({operation:reload, beforeSend: beforeSend, complete: complete});
-        $(param).submit();
+                var frm = $('<form class="infobox sucursal" method="post" action="/app/controller/php/administracion/sucursal/sucursal.php"></form>');
+                frm.append('<input name="instanciar" type="hidden" value="true"/>');
+                frm.append('<input type="hidden" name="id_sucursal" value="' + item.id + '"/>');
+                var subform = $('<div class="subform"></div>');
+                subform.append('<div class="espacio left"><h2>' + item.nombre + '</h2><p>' + item.ciudad_nombre + '</p></div>');
+                subform.append('<div class="espacio right"><a class="link" href="#"><i class="icon-ver"></i></a></div>');
+                frm.append(subform);
+
+                frm.sendForm({operation:reload, beforeSend: beforeSend, complete: complete});
+
+                frm.find(".link").click(function(){frm.submit();});
+
+                $('.result').append(frm);
+            });
+            
+            alert("info","icon-confirmar",message);
+            
+        }else{
+            
+            alert("error","icon-cerrar",message);
+            
+        }
+		
     };
 
-    var ready = function() {
-        $("#busqueda_sucursal").submit();
-    }
-
-    setTimeout(ready,0);
-
-    $("#busqueda_sucursal").sendForm({operation:load, beforeSend: beforeSend, complete: complete});
+    $("#sucursal").sendForm({operation:load, beforeSend: beforeSend, complete: complete});
 
 });  
-    
-
-

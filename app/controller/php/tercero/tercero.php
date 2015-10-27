@@ -309,17 +309,23 @@
         if ($get->buscar) 
         {
 
-        	$get->subcuenta = strtoupper(base64_decode($get->subcuenta));
         	$conexion = new Conexion();
 
-        	$operation = Tercero::buscar($get->subcuenta, $conexion);
-        	if($operation['ejecution'])
+        	$get->parametro = strtoupper(base64_decode($get->parametro));
+
+        	$operation = Tercero::buscar($get->parametro, $conexion);
+
+	        if(count($operation['result'])==1)
         	{
-	            $operation['message'] = "Se cargo correctamente la información";
+	            $operation['message'] = "Se encontro ".count($operation['result'])." registro.";
+	        }
+	        elseif(count($operation['result'])>1)
+        	{
+	            $operation['message'] = "Se encontraron ".count($operation['result'])." registros.";
 	        }
 	        else
 	       	{
-	            $operation['message'] = "No hay registros de terceros.";
+	            $operation['message'] = "No se encuentran registros con los parametros ingresados.";
 	        }
 
             echo json_encode($operation);

@@ -81,6 +81,7 @@
 }
 
 .form .fieldbox.rc {
+    padding-top: 2px; 
     border-bottom: none;
     text-align: center;
     color:#9e9e9e;

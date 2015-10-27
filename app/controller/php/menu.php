@@ -33,8 +33,8 @@
                         <div class="submenu float">
                             <nav>
                                 <lh class="title a"><span class="icon-home2"></span> TERCERO</lh>
-                                <li><a class="link" href="#" data-url="/app/view/html/tercero/form.html" data-name="Form Sucursal">Agregar</a></li>
-                                <li><a class="link" href="#" data-url="/app/view/html/tercero/busqueda.html" data-name="Busqueda Sucursal">Buscar</a></li>
+                                <li><a class="link" href="#" data-url="/app/view/html/tercero/form.html" data-name="Form Tercero">Agregar</a></li>
+                                <li><a class="link" href="#" data-url="/app/view/html/tercero/busqueda.html" data-name="Busqueda Tercero">Buscar</a></li>
                                 <li class="volver">VOLVER</li>
                             </nav>
                         </div>
@@ -69,8 +69,8 @@
                 </li>
                 <li class="submenu a"><a href="#"><i class="icon-circle-right"></i> SUCURSAL </a>
                         <nav>
-                            <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/form.html" data-name="Form Cuenta Auxiliar">Agregar sucursal</a></li>
-                            <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/busqueda.html" data-name="Busqueda PUC">Buscar sucursal</a></li>
+                            <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/form.html" data-name="Form Sucursal">Agregar sucursal</a></li>
+                            <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/busqueda.html" data-name="Busqueda Sucursal">Buscar sucursal</a></li>
                         </nav>
                     </nav>
                 </li>

@@ -52,7 +52,7 @@ nav lh.title.a{
 }
 
 nav lh.title.a i{
-    font-size: 1em;
+    font-size: 1.05em;
 }
 
 nav lh.title.b{
@@ -80,7 +80,7 @@ nav li.submenu.a a{
 
 nav li a i {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: initial;
 }
 
 nav li a:hover i,

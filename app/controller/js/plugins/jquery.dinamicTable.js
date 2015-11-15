@@ -55,12 +55,12 @@
             
             var changeIcon = function(){
             
-                if(parameter.object.parent().children(".resultbox_aaa").children(".icon").hasClass("icon-plus")){
-                    parameter.object.parent().children(".resultbox_aaa").children(".icon").removeClass("icon-plus");
-                    parameter.object.parent().children(".resultbox_aaa").children(".icon").addClass("icon-minus");
-                }else if(parameter.object.parent().children(".resultbox_aaa").children(".icon").hasClass("icon-minus")){
-                    parameter.object.parent().children(".resultbox_aaa").children(".icon").removeClass("icon-minus");
-                    parameter.object.parent().children(".resultbox_aaa").children(".icon").addClass("icon-plus")
+                if(parameter.object.parent().children(".resultbox_aaa").children(".icon").hasClass("icon-icon_plus")){
+                    parameter.object.parent().children(".resultbox_aaa").children(".icon").removeClass("icon-icon_plus");
+                    parameter.object.parent().children(".resultbox_aaa").children(".icon").addClass("icon-icon_minus");
+                }else if(parameter.object.parent().children(".resultbox_aaa").children(".icon").hasClass("icon-icon_minus")){
+                    parameter.object.parent().children(".resultbox_aaa").children(".icon").removeClass("icon-icon_minus");
+                    parameter.object.parent().children(".resultbox_aaa").children(".icon").addClass("icon-icon_plus")
                 }
             
             };

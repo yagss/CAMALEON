@@ -86,12 +86,12 @@
                         beforeSend: function(){
                             
                             btnMenuHide();
-                            parameter.btn_menu.addClass('icon-spinner9');
+                            parameter.btn_menu.addClass('icon-load_bar');
 
                         },
                         complete:function(){
 
-                            parameter.btn_menu.removeClass('icon-spinner9');
+                            parameter.btn_menu.removeClass('icon-load_bar');
 
                         }
                     });

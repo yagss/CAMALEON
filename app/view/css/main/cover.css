@@ -16,10 +16,10 @@
 
 .cover i {
     margin: auto;
-    font-size: 4em;
+    font-size: 6em;
     color: #2196F3;
-    -webkit-animation: turn 2s infinite linear;
-    animation: turn 2s infinite linear;
+    -webkit-animation: turn .8s infinite linear;
+    animation: turn .8s infinite linear;
 }
 
 @-webkit-keyframes turn {

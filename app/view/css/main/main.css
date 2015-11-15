@@ -65,7 +65,7 @@
     cursor: default;
 }
 
-#subbody header .subheader.btn .icon-spinner9{
+#subbody header .subheader.btn .icon-load_bar{
     -webkit-animation: turn 2s infinite linear;
     animation: turn 2s infinite linear;
 }
@@ -290,7 +290,7 @@
         top:60px;
     }
     
-    #subbody header .subheader.btn span{
+    #subbody header .subheader.btn i{
         margin-right: 10px;
     }
     

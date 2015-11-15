@@ -39,13 +39,13 @@
                 parameter.object.removeClass('icon-usuario_activo');
                 parameter.object.removeClass('icon-login');
             
-                parameter.object.addClass('icon-spinner9');
+                parameter.object.addClass('icon-load_bar');
                 
             };
             
             var loadingHide = function(){
                 
-                parameter.object.removeClass('icon-spinner9');
+                parameter.object.removeClass('icon-load_bar');
             
             };
             

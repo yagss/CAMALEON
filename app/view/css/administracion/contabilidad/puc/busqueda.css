@@ -105,8 +105,8 @@
     cursor: pointer;
 }
 
-.subcontenido.puc .result .resultbox .resultbox_aaa span.icon-plus,
-.subcontenido.puc .result .resultbox .resultbox_aaa span.icon-minus{
+.subcontenido.puc .result .resultbox .resultbox_aaa i.icon-icon_plus,
+.subcontenido.puc .result .resultbox .resultbox_aaa i.icon-icon_minus{
     cursor: pointer;
     margin: 5px;
     font-size: .75em;

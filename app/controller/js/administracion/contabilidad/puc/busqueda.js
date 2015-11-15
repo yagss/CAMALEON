@@ -46,7 +46,7 @@ $(document).ready(function(){
         
         var rbx_aa = $('<div class="resultbox_aa"></div>');
         var rbx_aaa = $('<div class="resultbox_aaa"></div>');
-        if(item.subentity){rbx_aaa.append('<span class="icon icon-plus"></span>');}
+        if(item.subentity){rbx_aaa.append('<i class="icon icon-icon_plus"></i>');}
         if(!(item.nativa)){
             if(item.tipo === "subcuenta"){
                 var form = $('<form method="post" action="/app/controller/php/administracion/contabilidad/subcuenta.php"></form>');

@@ -29,10 +29,10 @@
                     <li><a class="link" href="#" data-url="/app/view/html/administracion/inicio.html" data-name="Administrativo"><span class="icon-earth"></span> MODULO ADMINISTRATIVO</a></li>
                     <lh class="title b"> ACCESOS</lh>
                     <li class="submenu b">
-                        <a href="#"><span class="icon-spinner10"></span> TERCERO</a>
+                        <a href="#"> TERCERO</a>
                         <div class="submenu float">
                             <nav>
-                                <lh class="title a"><span class="icon-home2"></span> TERCERO</lh>
+                                <lh class="title a"><i class="icon-busqueda_tercero"></i> TERCERO</lh>
                                 <li><a class="link" href="#" data-url="/app/view/html/tercero/form.html" data-name="Form Tercero">Agregar</a></li>
                                 <li><a class="link" href="#" data-url="/app/view/html/tercero/busqueda.html" data-name="Busqueda Tercero">Buscar</a></li>
                                 <li class="volver">VOLVER</li>
@@ -56,9 +56,9 @@
 
             <nav>
                 <lh class="title a"><i class="icon-global"></i> MÓDULO ADMINISTRATIVO</lh>
-                <li class="submenu a"><a href="#"><i class="icon-circle-right"></i> DATOS Y VARIABLES </a>
+                <li class="submenu a"><a href="#"><i class="icon-arrow1"></i> DATOS Y VARIABLES </a>
                     <nav>
-                        <li class="submenu a"><a href="#"><span class="icon-arrow-right2"></span> PUC</a>
+                        <li class="submenu a"><a href="#"><i class="icon-arrow2"></i> PUC</a>
                             <nav>
                                 <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/cuenta_auxiliar/form.html" data-name="Form Cuenta Auxiliar">Agregar cuenta auxiliar</a></li>
                                 <li><a class="link" href="#" data-url="/app/view/html/administracion/contabilidad/puc/busqueda.html" data-name="Busqueda PUC">Buscar cuenta</a></li>
@@ -67,7 +67,7 @@
                         <!--<li class=""><a href="#"><span class="icon-arrow-right2"></span> NOMINA</a></li>-->
                     </nav>
                 </li>
-                <li class="submenu a"><a href="#"><i class="icon-circle-right"></i> SUCURSAL </a>
+                <li class="submenu a"><a href="#"><i class="icon-arrow1"></i> SUCURSAL </a>
                         <nav>
                             <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/form.html" data-name="Form Sucursal">Agregar sucursal</a></li>
                             <li><a class="link" href="#" data-url="/app/view/html/administracion/sucursal/busqueda.html" data-name="Busqueda Sucursal">Buscar sucursal</a></li>

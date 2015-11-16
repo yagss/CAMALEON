@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+    menu("hide");
 
 	$(".fieldbox.textbox").animateTextbox();
 

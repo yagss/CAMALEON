@@ -6,8 +6,8 @@
 		private $host='localhost';
         private $port='5432';
 		private $db='camaleon';
-		private $usuario='';
-		private $password='';
+		private $usuario='postgres';
+		private $password='123456';
 		//Sobreescribiendo el metodo construtor de la clase PDO
 		public function __construct(){
 			

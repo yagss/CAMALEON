@@ -2,11 +2,11 @@ $(document).ready(function(){
     
     menu("hide");
 
-	$(".fieldbox.textbox").animateTextbox();
+    $(".fieldbox.textbox").animateTextbox();
 
-	autosize($(".fieldbox.textbox").find("field"));
+    autosize($(".fieldbox.textbox").find("field"));
 
-	$(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
+    $(".btnCloseContent").btnCloseContent({content:$("#contenedor")});
     
     //$('.result').empty();
 
@@ -51,6 +51,7 @@ $(document).ready(function(){
         if(result.length>0){
             
             $('.result').empty();
+            console.log(JSON.stringify(result));
         
             $.each(result, function(i, item){
 
@@ -76,7 +77,7 @@ $(document).ready(function(){
             alert("error","icon-cerrar",message);
             
         }
-		
+        
     };
 
     $("#transaccion").sendForm({operation:load, beforeSend: beforeSend, complete: complete});

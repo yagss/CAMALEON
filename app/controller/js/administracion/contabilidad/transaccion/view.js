@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	menu("hide");
+    menu("hide");
 
     $(".fieldbox.textbox").animateTextbox();
     $(".fieldbox.select").animateSelect();
@@ -40,10 +40,16 @@ $(document).ready(function(){
     };
     
     var load = function(result, message, data)
-    {   
-    	$('#tipodoc').val(data.tipodoc);
-    	$('#fecha').val(data.fecha);
-    	$('#descripcion').val(data.descripcion);
+    {  
+        var movimientos = data.movimientos;
+        $('#tipodoc').val(data.tipodoc);
+        $('#fecha').val(data.fecha);
+        $('#descripcion').val(data.descripcion);
+        if (movimientos.length >0) {
+            $.each(movimientos, function (i,item) {
+                
+            });
+        };
         autosize($(".field.text").find(".field"));
     };
     

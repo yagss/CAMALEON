@@ -111,7 +111,7 @@
 
 			$operation = $conexion->dml($parameters);
 
-			$this->instanciar($this->id, $conexion);
+			$this->__construct($this->id, $conexion);
 
 			return $operation;
 

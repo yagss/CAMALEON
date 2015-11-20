@@ -1,4 +1,4 @@
-<script src="/app/controller/js/administracion/contabilidad/transaccion/movimiento/form.js"></script>
+<script src="/app/controller/js/administracion/contabilidad/transaccion/movimiento/update.js"></script>
 <link rel="stylesheet" type="text/css" href="/app/view/css/administracion/contabilidad/transaccion/movimiento.css">
 
 
@@ -13,19 +13,17 @@
 
                 <div class="subform">
                     
-                    <input type="hidden" name="registrar" value="true">
+                    <input type="hidden" name="actualizar" value="true">
                     
                     <div class="fieldbox textbox width_10">
                         <label>DETALLE</label>
                         <textarea class="field" name="detalle" id="detalle" rows="1"></textarea>
-                        <!--<input class="field" id="descripcion" type="text" name="descripcion"/>-->
                     </div>
                     
                     <div class="fieldbox select width_4" id="suc">
                         <select  class="field" name="sucursal" id="sucursal" data-entity="sucursal">
                             <option value="">SUCURSAL</option>
                         </select>
-                        <!-- <input class="field" type="text" name="sucursal" id="sucursal"> -->
                     </div><br>
                     
                     <div class="fieldbox rc width_4">
@@ -60,7 +58,7 @@
                         <input class="field" type="text" name="haber" id="haber">
                     </div><br>
 
-                    <button class="button">CREAR</button>
+                    <button class="button">ACTUALIZAR</button>
 
                 </div>    
 

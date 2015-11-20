@@ -51,15 +51,14 @@ $(document).ready(function(){
         if(result.length>0){
             
             $('.result').empty();
-            console.log(JSON.stringify(result));
         
             $.each(result, function(i, item){
 
                 var frm = $('<form class="infobox transaccion" method="post" action="/app/controller/php/administracion/contabilidad/transaccion/transaccion.php"></form>');
                 frm.append('<input name="instanciar" type="hidden" value="true"/>');
-                frm.append('<input type="hidden" name="id_sucursal" value="' + item.id + '"/>');
+                frm.append('<input type="hidden" name="id_transaccion" value="' + item.trs_id + '"/>');
                 var subform = $('<div class="subform"></div>');
-                subform.append('<div class="espacio left"><h2>' + item.nombre + '</h2><p>' + item.ciudad_nombre + '</p></div>');
+                subform.append('<div class="espacio left"><h2>' + item.tdc_descripcion + '</h2><p>' + item.trs_fecha + '</p></div>');
                 subform.append('<div class="espacio right"><a class="link" href="#"><i class="icon-ver"></i></a></div>');
                 frm.append(subform);
 

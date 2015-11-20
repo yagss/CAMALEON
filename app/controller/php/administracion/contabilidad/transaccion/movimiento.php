@@ -24,18 +24,115 @@
 			$get->cuenta = base64_decode($get->cuenta);
 			$get->debe = base64_decode($get->debe);
 			$get->haber = base64_decode($get->haber);
-			if ($get->detalle != "" && $get->sucursal != "" && $get->req_tercero != "" && $get->req_activo != "" && $get->codtoa != "" && $get->cuaenta != "" && $get->debe != "" && $get->haber) {
+			if ($get->detalle != "" && $get->sucursal != "" && $get->req != "" && $get->codtoa != "" && $get->cuenta != "" && $get->debe != "" && $get->haber) {
 				$conexion = new Conexion();
-				$operation = MovimientoContable::registrar($transaccion->getID(), $get->sucursal, $get->detalle, $get->cuaenta, $get->codtoa, $get->req, $get->debe, $get->haber, $conexion);
+                if ($get->req == "tercero") {
+                    $operation = MovimientoContable::registrar($transaccion->getID(), $get->sucursal, $get->detalle, $get->cuenta, $get->codtoa, 0, $get->debe, $get->haber, $conexion);   
+                    $log = Log::registro($usuario->getID(), "info", "Registro de información. - Movimiento Contable. {".$transaccion->getID().", ".$get->sucursal.", ".$get->detalle.", ".$get->cuenta.", ".$get->codtoa.", 0, ".$get->debe.", ".$get->haber."}", $conexion);
+                }else{
+                    $operation = MovimientoContable::registrar($transaccion->getID(), $get->sucursal, $get->detalle, $get->cuenta, 0, $get->codtoa, $get->debe, $get->haber, $conexion);
+                    $log = Log::registro($usuario->getID(), "info", "Registro de información. - Movimiento Contable. {".$transaccion->getID().", ".$get->sucursal.", ".$get->detalle.", ".$get->cuenta.", 0, ".$get->codtoa.", ".$get->debe.", ".$get->haber."}", $conexion);
+                }
 				if($operation['result']){
+                    $operation['message'] = "Se registro correctamente la información.";
 					$movimiento = new MovimientoContable($operation['data']['id'], $conexion);
-				}
+                    $_SESSION['movimiento'] = serialize($movimiento);
+				}elseif (!$operation['result']) {
+                    $log = Log::registro($usuario->getID(), "error", "Registro de información. - Movimiento Contable. {".$transaccion->getID().", ".$get->sucursal.", ".$get->detalle.", ".$get->cuenta.", ".$get->codtoa.", ".$get->debe.", ".$get->haber."}", $conexion);
+                }
 			}else{
 				$operation['ejecution'] = true;
                 $operation['result'] = false;
               	$operation['message'] = "Por favor diligencie los todos los campos del formulario.";
 			}
 			echo json_encode($operation);
+        }
+
+        if ($get->loadData) {
+            if (isset($_SESSION['movimiento'])) {
+                
+                $movimiento = unserialize($_SESSION['movimiento']);
+
+                $data['detalle'] = $movimiento->getDetalle();
+                $data['sucursal'] = $movimiento->getSucursal();
+                $req_tercero = $movimiento->getTercero();
+                $req_activo = $movimiento->getActivo();
+                if (!empty($req_activo)) {
+                    $data['req'] = 'activo';
+                    //$data['codtoa'] = $movimiento->getActivo()->getId();                    
+                }else{
+                    $data['req'] = 'tercero';
+                    $data['codtoa'] = $req_tercero->getId();
+                }
+                //$data['codtoa'] = $movimiento->getCo;
+                $data['cuenta'] = $movimiento->getCuenta()->getID();
+                $data['debe'] = $movimiento->getDebe();
+                $data['haber'] = $movimiento->getHaber();
+
+                $operation['ejecution'] = true;
+                $operation['result'] = true;
+                $operation['message'] = "Se cargo correctamente la información";
+                $operation['data'] = $data;
+                
+                echo json_encode($operation);
+            }
+        }
+
+        if ($get->instanciar) {
+            $get->id_movimiento = base64_decode($get->id_movimiento);
+
+            $conexion =new Conexion();
+            $movimiento = new MovimientoContable($get->id_movimiento, $conexion);
+
+            $_SESSION['movimiento'] = serialize($movimiento);
+            
+            $operation['ejecution'] = true;
+            $operation['result'] = true;
+            $operation['message'] = "Se cargo correctamente la información";
+            echo json_encode($operation);
+        }
+
+        if ($get->actualizar) {
+            if ($_SESSION['movimiento']) {
+                $movimiento = unserialize($_SESSION['movimiento']);
+                $get->detalle = base64_decode($get->detalle);
+                $get->sucursal = base64_decode($get->sucursal);
+                $get->req = base64_decode($get->req);
+                $get->codtoa = base64_decode($get->codtoa);
+                $get->cuenta = base64_decode($get->cuenta);
+                $get->debe = base64_decode($get->debe);
+                $get->haber = base64_decode($get->haber);
+                if ($get->detalle != "" && $get->sucursal != "" && $get->req != "" && $get->codtoa != "" && $get->cuenta != "" && $get->debe != "" && $get->haber) {
+                    $conexion = new Conexion();
+                    if ($get->req == "tercero") {
+                        $operation = $movimiento->modificar($transaccion->getID(), $get->sucursal, $get->detalle, $get->cuenta, $get->debe, $get->haber, $conexion);
+                        if($operation['result']){
+                            $movimiento->modificarTercero($get->codtoa,$conexion);
+                            $log = Log::registro($usuario->getID(), "info", "Actualización de información. - Movimiento Contable. {".$transaccion->getID().", ".$get->sucursal.", ".$get->detalle.", ".$get->cuenta.", ".$get->codtoa.", 0, ".$get->debe.", ".$get->haber."}", $conexion);
+                        }elseif (!$operation['result']) {
+                            $log = Log::registro($usuario->getID(), "error", "Actualización de información. - Movimiento Contable. {".$transaccion->getID().", ".$get->sucursal.", ".$get->detalle.", ".$get->cuenta.", ".$get->codtoa.", 0, ".$get->debe.", ".$get->haber."}", $conexion);
+                        }
+                    }else{
+                        $operation = $movimiento->modificar($transaccion->getID(), $get->sucursal, $get->detalle, $get->cuenta, $get->debe, $get->haber, $conexion);
+                        if($operation['result']){
+                            //$movimiento->modificarTercero($get->codtoa,$conexion);
+                            $log = Log::registro($usuario->getID(), "info", "Actualización de información. - Movimiento Contable. {".$transaccion->getID().", ".$get->sucursal.", ".$get->detalle.", ".$get->cuenta.", 0, ".$get->codtoa.", ".$get->debe.", ".$get->haber."}", $conexion);
+                        }elseif (!$operation['result']) {
+                            $log = Log::registro($usuario->getID(), "error", "Actualización de información. - Movimiento Contable. {".$transaccion->getID().", ".$get->sucursal.", ".$get->detalle.", ".$get->cuenta.", 0, ".$get->codtoa.", ".$get->debe.", ".$get->haber."}", $conexion);
+                        }
+                    }
+                    if($operation['result']){
+                        $operation['message'] = "Se registro correctamente la información.";
+                        $movimiento = new MovimientoContable($movimiento->getID(), $conexion);
+                        $_SESSION['movimiento'] = serialize($movimiento);
+                    }
+                }else{
+                    $operation['ejecution'] = true;
+                    $operation['result'] = false;
+                    $operation['message'] = "Por favor diligencie los todos los campos del formulario.";
+                }
+                echo json_encode($operation);
+            }
         }
 	}
 ?>

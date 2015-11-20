@@ -19,6 +19,11 @@ $(document).ready(function(){
         $(".cover").removeClass("show");
         
     };
+    
+    var parameters = {url:"/app/controller/php/administracion/sucursal/sucursal.php", beforeSend: beforeSend, complete: complete};
+    $("#sucursal").parent().select(parameters);
+    
+    $("#sucursal").trigger("load");
 	
 	var reload = function(result, msg)
 	{

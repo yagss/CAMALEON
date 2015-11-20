@@ -18,6 +18,7 @@
 		if (!isset($get->actualizar)) { $get->actualizar = false; }
 		if (!isset($get->buscar)){ $get->buscar = false; } 
 		if (!isset($get->instanciar)){ $get->instanciar = false; }
+		if (!isset($get->entity)){ $get->entity = false; }
 
 		if ($get->registrar) 
 		{
@@ -157,6 +158,27 @@
 			echo json_encode($operation);
 			
 		}
+
+		if($get->entity == "sucursal"){
+
+			$conexion = new Conexion();
+			$operation = Sucursal::buscar('', $conexion);
+
+			if($operation['result']){
+				$i=0;
+
+                foreach($operation['result'] as $fila){
+                    $result[$i]['id'] = $fila['id'];
+                    $result[$i]['nombre'] = $fila['nombre'];
+                    $i++;
+                }
+
+                $operation['result'] = $result;
+			}
+
+            echo json_encode($operation);
+
+        }
 
 	}
 
